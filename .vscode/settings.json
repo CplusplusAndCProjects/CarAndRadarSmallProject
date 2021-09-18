@@ -73,7 +73,8 @@
     "map": "cpp",
     "set": "cpp",
     "iomanip": "cpp",
-    "cinttypes": "cpp"
+    "cinttypes": "cpp",
+    "future": "cpp"
   },
   "C_Cpp_Runner.debuggerPath": "/usr/bin/gdb",
   "C_Cpp_Runner.makePath": "/usr/bin/make"

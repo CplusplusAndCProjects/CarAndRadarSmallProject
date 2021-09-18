@@ -106,6 +106,9 @@ Pre: install cmake and complier and Gtest on ubuntu
   
 Compile from this directroy via below
 ```
-mkdir build; cd build; cmake ..; make; 
+mkdir build; 
+cd build; 
+cmake .. -DBUILD_TESTS=ON; 
+make; 
 ```
 

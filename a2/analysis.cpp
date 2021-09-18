@@ -22,6 +22,7 @@ void Analysis::computeScanningSpeed(unsigned int samples, double& scanningSpeed)
     std::chrono::duration<double> diff1 = endTemp - start;
 
   }
+
   auto end = std::chrono::steady_clock::now();
   std::chrono::duration<double> diff = end - start;
   double totalTime = diff.count();

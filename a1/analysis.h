@@ -8,9 +8,12 @@
 #include<unistd.h>
 #include <cstdlib>
 #include <future>
-
+#include <iomanip>
+#include <numeric>
+#include <chrono>
 using namespace std;
 static std::shared_ptr<DisplayRace> raceDisplay1;
+
 class Analysis
 {
 public:
@@ -67,7 +70,7 @@ public:
      */
     void demoRace();
     int RacingWithDistance(Car *car, int distance);
-    static int RacingWithSpeed(Car *car);
+    static int RacingWithSpeed(Car *car, int index);
  private:
     std::vector<Car*> cars_;
     std::shared_ptr<DisplayRace> raceDisplay_;
