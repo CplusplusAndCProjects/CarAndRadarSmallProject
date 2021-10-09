@@ -1,0 +1,6 @@
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/edit_cache.dir
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/a2_skeleton_example.dir
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/rebuild_cache.dir
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/tf2.dir
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/control_aircraft.dir
+/home/glacio/Desktop/03_10_2021/a2/a2_skeleton/build/CMakeFiles/analysis.dir

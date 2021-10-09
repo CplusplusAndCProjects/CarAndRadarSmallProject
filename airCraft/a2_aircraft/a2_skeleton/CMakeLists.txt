@@ -45,6 +45,13 @@ link_directories(${SIMULATOR_LIB})
 
 # Change your CMakeLists.txt from here.
 
+add_library(analysis analysis.cpp)
+#target_link_libraries(analysis simulator )
+add_library(control_aircraft control_aircraft.cpp)
+#target_link_libraries(control_aircraft simulator )
+add_library(tf2 tf2.cpp)
+#target_link_libraries(tf2 simulator )
+
 # You will most likely be creating some additional libraries that you will use in
 # unit testsing, there are no libraries in this example
 
@@ -52,7 +59,7 @@ link_directories(${SIMULATOR_LIB})
 add_executable(${PROJECT_NAME}_example main.cpp)
 
 # Link the library against OpenCV and simulator library
-target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} simulator)
+target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} simulator analysis tf2 control_aircraft)
 
 
 #################################################################
