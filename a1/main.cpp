@@ -47,11 +47,9 @@ int main (void) {
     // height = 1.19 m, width = 1.87 m, power P = 420 HP, drag coefficient = 0.30, weight = 1190 kg
     std::string maskeCar0 = "Car 0", maskeCar1 = "Car 1",maskeCar2 = "Car 2",modoleCar0 ="Modole0", modoleCar1="Modole1",modoleCar2 ="Modole2";
     //Car *car = new Car(maskeCar0, modoleCar0, 1.45, 1.77, 143.0, 0.29, 1200.0);
-
     cars.push_back(new Car("merc", "c180",1.45,1.77,143,0.29,1200));
     cars.push_back(new Car("bugatti", "veyron",1.19,2.00,1200,0.35,2200));
     cars.push_back(new Car("toyota", "yaris",1.19,1.87,420,0.30,1190));
-    
     std::shared_ptr<DisplayRace> raceDisplay(new DisplayRace(cars));
 
     //We create a pointer to the Radar, will use a shared pointer here

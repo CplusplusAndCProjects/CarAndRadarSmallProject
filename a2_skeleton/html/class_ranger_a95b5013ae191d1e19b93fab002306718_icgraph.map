@@ -1,0 +1,6 @@
+<map id="Ranger::getAngularResolution" name="Ranger::getAngularResolution">
+<area shape="rect" id="node1" title="Getter for angular resolution." alt="" coords="447,31,643,57"/>
+<area shape="rect" id="node2" href="$class_laser.html#a432155ce403cb4e20fa866a24135e155" title="The virtual function to be implemented inside the derived class." alt="" coords="209,5,393,32"/>
+<area shape="rect" id="node3" href="$class_ranger.html#a984a4ff207dc150151e05ef13bc5ba31" title="Virtual function getter for current number of samples." alt="" coords="204,56,399,83"/>
+<area shape="rect" id="node4" href="$class_ranger.html#a2b76dc3e21da8a7abac830d09fa81241" title="Generate random values." alt="" coords="5,56,156,83"/>
+</map>

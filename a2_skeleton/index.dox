@@ -1,0 +1,26 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage Assignment 2 Utilising Abstraction for a Range of Sensor Classes
+
+This assignment is done by TRONG DUY BUI
+Student ID: 13432190
+
+@section ac_doc_index_more_info Where to start
+
+- Run the programm using cmake and make
+- There are two type of sensors: One Laser and two Sonar come with 2 types of sensing method: POINT and CONE
+
+@section ac_doc_index_running  Running application
+    
+- The system needs user to input the angular resolution for the laser and the offset value for the sonar sensor.
+- Also, please input the number of cell to be generated in order to check the state of each cell
+- Cell State and raw data will continuously be printed each second after user have finished the procedure.
+
+
+*/

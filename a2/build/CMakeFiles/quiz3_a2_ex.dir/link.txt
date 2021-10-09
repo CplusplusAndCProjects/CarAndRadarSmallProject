@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -no-pie -pthread  -rdynamic CMakeFiles/quiz3_a2_ex.dir/main.cpp.o  -o quiz3_a2_ex   -L/home/glacio/Desktop/quiz3/a2/dep  -Wl,-rpath,/home/glacio/Desktop/quiz3/a2/dep libanalysis.a -lradar 

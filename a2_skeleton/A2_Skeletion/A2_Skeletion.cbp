@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="A2_Skeletion" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/A2_Skeletion" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/A2_Skeletion" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../CMakeLists.txt" />
+		<Unit filename="../CMakeLists.txt.user" />
+		<Unit filename="../Doxyfile.in" />
+		<Unit filename="../cell.cpp" />
+		<Unit filename="../cell.h" />
+		<Unit filename="../index.dox" />
+		<Unit filename="../laser.cpp" />
+		<Unit filename="../laser.h" />
+		<Unit filename="../main.cpp" />
+		<Unit filename="../ranger.cpp" />
+		<Unit filename="../ranger.h" />
+		<Unit filename="../rangerfusion.cpp" />
+		<Unit filename="../rangerfusion.h" />
+		<Unit filename="../rangerfusioninterface.cpp" />
+		<Unit filename="../rangerfusioninterface.h" />
+		<Unit filename="../rangerinterface.cpp" />
+		<Unit filename="../rangerinterface.h" />
+		<Unit filename="../sonar.cpp" />
+		<Unit filename="../sonar.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

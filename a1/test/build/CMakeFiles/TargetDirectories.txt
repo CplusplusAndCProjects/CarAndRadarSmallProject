@@ -1,0 +1,4 @@
+/home/glacio/Desktop/quiz3/a1/test/build/CMakeFiles/rebuild_cache.dir
+/home/glacio/Desktop/quiz3/a1/test/build/CMakeFiles/edit_cache.dir
+/home/glacio/Desktop/quiz3/a1/test/build/CMakeFiles/test.dir
+/home/glacio/Desktop/quiz3/a1/test/build/CMakeFiles/utest.dir

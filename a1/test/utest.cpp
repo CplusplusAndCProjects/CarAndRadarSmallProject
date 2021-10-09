@@ -21,8 +21,8 @@ TEST (AnalysisTest, DragRace) {
 
     ASSERT_EQ(order.size(),cars.size());
     EXPECT_EQ(order.at(0),2);
-    EXPECT_EQ(order.at(1),1);
-    EXPECT_EQ(order.at(2),0);
+    EXPECT_EQ(order.at(1),0);
+    EXPECT_EQ(order.at(2),1);
 
 }
 

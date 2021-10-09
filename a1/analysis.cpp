@@ -4,6 +4,7 @@ using std::vector;
 using std::pair;
 
 std::vector<unsigned int> runningTimeStatic;
+std::vector<unsigned int> runningDistanceStatic;
 
 //! @todo
 //! TASK 1 - We need to store cars in the Analysis class, how to do this?
@@ -85,13 +86,14 @@ std::vector<unsigned int> Analysis::dragRace(double distance){
 
 
     std::vector<unsigned int> order(cars_.size(),0);
-
-    std::vector<unsigned int> runningTime(cars_.size(),0);
     std::vector<unsigned int> runningTimeTemps(cars_.size(),0);
+    //std::vector<unsigned int> runningTime(cars_.size(),0);
+    runningDistanceStatic = runningTimeTemps;
     //carsChange = cars_;
     //std::vector<Car*> orderTemp = cars_;
     Car *carTemp = cars_.at(0);
     int oderTemp = 0, runningTimeTemp = 0;
+    thread threads[cars_.size()];
 
     //initial oder array with sort default
     for (int i = 0; i < order.size(); i++)
@@ -100,16 +102,51 @@ std::vector<unsigned int> Analysis::dragRace(double distance){
         /* code */
     }
 
+    // for (int i = 0; i < cars_.size(); i++)
+    // {
+    //     runningTime[i] = (RacingWithDistance(cars_[i],distance, i));
+
+    // }
+
+        for (int i = 0; i < cars_.size(); i++)
+    {
+
+        threads[i] = thread(RacingWithDistance, cars_[i],distance, i); 
+        //th.join(); 
+        //runningTime.push_back(RacingWithSpeed(cars_[i]));      // Call function and assign return value.
+    }
+
     for (int i = 0; i < cars_.size(); i++)
     {
-        runningTime[i] = (RacingWithDistance(cars_[i],distance));
+
+        //threads[i] = thread(RacingWithSpeed, cars_[i]); 
+        threads[i].join(); 
+        //runningTime.push_back(RacingWithSpeed(cars_[i]));      // Call function and assign return value.
+    }
+
+    int a =0;
+    while (a == 0)
+    {
+        int count =0;
+        for (int i = 0; i < runningDistanceStatic.size(); i++)
+        {   
+            if(runningDistanceStatic[i]> 0)
+                count ++;
+            
+        }
+        if(count >= runningDistanceStatic.size()-1)
+            a = 1;
+        else
+            count = 0;
+        
+        usleep(100);
 
     }
-    runningTimeTemps = runningTime;
+    runningTimeTemps = runningDistanceStatic;
 
-    for (int i = 0; i < runningTime.size(); i++)
+    for (int i = 0; i < runningDistanceStatic.size(); i++)
     {
-        cout<<"Time running of car["<<i<<"], Carname:"<<cars_[i]->getMake()<<" is: "<< runningTime[i]<<endl;
+        cout<<"Time running of car["<<i<<"], Carname:"<<cars_[i]->getMake()<<" is: "<< runningDistanceStatic[i]<<endl;
 
 
     }
@@ -137,12 +174,12 @@ std::vector<unsigned int> Analysis::dragRace(double distance){
             }
         }
     }
-    for (int i = 0; i < runningTime.size(); i++)
+    for (int i = 0; i < runningDistanceStatic.size(); i++)
     {
         for (int j = 0; j<runningTimeTemps.size(); j++)
         {
             /* code */
-            if(runningTime[i] == runningTimeTemps[j])
+            if(runningDistanceStatic[i] == runningTimeTemps[j])
             {
                 order[i] = j;
                 break;
@@ -159,6 +196,23 @@ std::vector<unsigned int> Analysis::dragRace(double distance){
 //! TASK 3 - Refer to README.md and the Header file for full description
 void Analysis::stopAllCars(){
 
+    thread threads[cars_.size()];
+
+    for (int i = 0; i < cars_.size(); i++)
+    {
+
+        threads[i] = thread(StopCar, cars_[i],i); 
+        //th.join(); 
+        //runningTime.push_back(RacingWithSpeed(cars_[i]));      // Call function and assign return value.
+    }
+
+    for (int i = 0; i < cars_.size(); i++)
+    {
+
+        //threads[i] = thread(RacingWithSpeed, cars_[i]); 
+        threads[i].join(); 
+        //runningTime.push_back(RacingWithSpeed(cars_[i]));      // Call function and assign return value.
+    }
 
     for (int i = 0; i < cars_.size(); i++)
     {
@@ -321,28 +375,46 @@ void Analysis::demoRace(){
     }
 
 }
+int Analysis::StopCar(Car *car, int index){
 
-int Analysis::RacingWithDistance(Car *car, int distance)
+        cout<<"stop Cars name: "<<car->getMake()<<endl;
+        /* code */
+        while (car->getCurrentSpeed()>0)
+        {
+            /* code */
+            car->decelerate();
+            usleep(20);
+            if(raceDisplay1!=nullptr){
+                raceDisplay1->updateDisplay();
+            }
+        }
+        std::cout<<" Car ["<<index<<"] was stop, car speed: "<< car->getCurrentSpeed()<<endl;
+
+}
+int Analysis::RacingWithDistance(Car *car, int distance, int index)
 {
 
     cout<<"Racing With Distance"<<endl;
+    auto start = std::chrono::steady_clock::now();
 
-    int time = 0;
     double odoMetryBegin = car->getOdometry();
     while (distance + odoMetryBegin > car->getOdometry())
     {
         /* code */
         car->accelerate();
-        time++;
-        //usleep(20);
-        if(raceDisplay_!=nullptr){
-            raceDisplay_->updateDisplay();
+        //time++;
+        usleep(10);
+        if(raceDisplay1!=nullptr){
+            raceDisplay1->updateDisplay();
         }
     }
-    
-    return time;
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<double> diff = end - start;
+    runningDistanceStatic[index] = diff.count();
+    return diff.count();
 }
 int Analysis::RacingWithSpeed(Car *car, int index)
+
 {
 
     cout<<"RacingWithSpeed"<<endl;
@@ -374,6 +446,7 @@ int Analysis::RacingWithSpeed(Car *car, int index)
     }
 
     auto end = std::chrono::steady_clock::now();
+    
     std::chrono::duration<double> diff = end - start;
 
     runningTimeStatic[index] = (diff.count());

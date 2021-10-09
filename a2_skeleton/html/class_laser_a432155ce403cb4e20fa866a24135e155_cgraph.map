@@ -1,0 +1,5 @@
+<map id="Laser::getNumberOfSample" name="Laser::getNumberOfSample">
+<area shape="rect" id="node1" title="The virtual function to be implemented inside the derived class." alt="" coords="5,31,189,57"/>
+<area shape="rect" id="node2" href="$class_ranger.html#a95b5013ae191d1e19b93fab002306718" title="Getter for angular resolution." alt="" coords="237,5,433,32"/>
+<area shape="rect" id="node3" href="$class_ranger.html#a4bca7dce56b7959257d90b1f30bf0271" title="Getter for field of view." alt="" coords="255,56,416,83"/>
+</map>

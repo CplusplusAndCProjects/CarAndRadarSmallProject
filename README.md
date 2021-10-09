@@ -108,7 +108,7 @@ Compile from this directroy via below
 ```
 mkdir build; 
 cd build; 
-cmake .. -DBUILD_TESTS=ON; 
+cmake .. -DBUILD_TESTS=ON;
 make; 
 ```
 

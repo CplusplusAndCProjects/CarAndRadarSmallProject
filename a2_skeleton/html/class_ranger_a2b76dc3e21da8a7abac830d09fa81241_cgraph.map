@@ -1,0 +1,6 @@
+<map id="Ranger::generateData" name="Ranger::generateData">
+<area shape="rect" id="node1" title="Generate random values." alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node2" href="$class_ranger.html#a984a4ff207dc150151e05ef13bc5ba31" title="Virtual function getter for current number of samples." alt="" coords="204,31,399,57"/>
+<area shape="rect" id="node3" href="$class_ranger.html#a95b5013ae191d1e19b93fab002306718" title="Getter for angular resolution." alt="" coords="447,5,643,32"/>
+<area shape="rect" id="node4" href="$class_ranger.html#a4bca7dce56b7959257d90b1f30bf0271" title="Getter for field of view." alt="" coords="464,56,625,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Ranger::getNumberOfSample" name="Ranger::getNumberOfSample">
+<area shape="rect" id="node1" title="Virtual function getter for current number of samples." alt="" coords="5,31,200,57"/>
+<area shape="rect" id="node2" href="$class_ranger.html#a95b5013ae191d1e19b93fab002306718" title="Getter for angular resolution." alt="" coords="248,5,444,32"/>
+<area shape="rect" id="node3" href="$class_ranger.html#a4bca7dce56b7959257d90b1f30bf0271" title="Getter for field of view." alt="" coords="265,56,427,83"/>
+</map>

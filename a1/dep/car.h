@@ -27,14 +27,12 @@ public:
     \sa Car() and accelerate() and decelerate();
   */
   double getCurrentSpeed(void);
-
   //! Gets the odometry
   /*!
     \return current odometry [m].
     \sa Car() ;
   */
   double getOdometry(void);
-
   //setters
   void setMake(std::string);
   void setModel(std::string);
@@ -45,8 +43,6 @@ public:
     \sa Car()
   */
   double getTopSpeed(void);
-
-
   /**
    This function decelerates the vehicle
    */

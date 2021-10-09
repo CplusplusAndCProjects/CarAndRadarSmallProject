@@ -1,0 +1,6 @@
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/rebuild_cache.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/fusionTests.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/rawTests.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/edit_cache.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/mock_lib.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/test/build/CMakeFiles/student_lib.dir

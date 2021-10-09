@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_ranger_interface.html" title="Specifies the functionality for the Ranger Class, your Ranger class must inherit from it...." alt="" coords="5,31,120,57"/>
+<area shape="rect" id="node2" href="$class_ranger.html" title="The base class for Laser and Radar that inherits from the RangerInterface." alt="" coords="168,31,232,57"/>
+<area shape="rect" id="node3" href="$class_laser.html" title="The Radar class derived from the base class Ranger." alt="" coords="281,5,335,32"/>
+<area shape="rect" id="node4" href="$class_sonar.html" title="The Radar class derived from the base class Ranger." alt="" coords="280,56,336,83"/>
+</map>

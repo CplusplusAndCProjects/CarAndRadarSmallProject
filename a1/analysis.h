@@ -69,8 +69,9 @@ public:
      * Demo of racing, accelerates the cars 300 times, deccelerates 600 times.
      */
     void demoRace();
-    int RacingWithDistance(Car *car, int distance);
+    static int RacingWithDistance(Car *car, int distance,  int index);
     static int RacingWithSpeed(Car *car, int index);
+    static int StopCar(Car *car, int index);
  private:
     std::vector<Car*> cars_;
     std::shared_ptr<DisplayRace> raceDisplay_;

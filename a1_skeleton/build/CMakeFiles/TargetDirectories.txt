@@ -1,0 +1,5 @@
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/build/CMakeFiles/edit_cache.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/build/CMakeFiles/assignment2.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/build/CMakeFiles/rebuild_cache.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/build/CMakeFiles/ranger_lib.dir
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/build/CMakeFiles/cell.dir

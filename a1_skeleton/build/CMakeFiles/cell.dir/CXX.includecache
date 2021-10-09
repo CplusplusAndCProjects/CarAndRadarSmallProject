@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/cell.cpp
+cell.h
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/cell.h
+random
+-
+chrono
+-
+
+/mnt/e/Projects/CPlusPlusProject/Job1/a1_skeleton/cell.h
+

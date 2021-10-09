@@ -1,0 +1,518 @@
+\hypertarget{class_ranger_fusion}{}\doxysection{Ranger\+Fusion Class Reference}
+\label{class_ranger_fusion}\index{RangerFusion@{RangerFusion}}
+
+
+Inheritance diagram for Ranger\+Fusion\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_ranger_fusion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ranger\+Fusion\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_ranger_fusion__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ranger_fusion_a977f1817c88c33e8f35695a530e44a9c}{Ranger\+Fusion}} (std\+::vector$<$ \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} $\ast$ $>$ rangers)
+\begin{DoxyCompactList}\small\item\em $<$\mbox{\hyperlink{class_ranger}{Ranger}} fusion contructor to hold all the rangers \end{DoxyCompactList}\item 
+std\+::vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_ranger_fusion_a8747f12610ff7a5d91d5f20deb3b22d7}{get\+Raw\+Range\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Getter for pre-\/fused data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ranger_fusion_ae3128f8cc8f4cb955d8db661aefba3dc}{set\+Cells}} (std\+::vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ cells)
+\begin{DoxyCompactList}\small\item\em A function to get all the cell implimented. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ \mbox{\hyperlink{class_ranger_fusion_ab2e0396006455dc94c7d5bbf095a7761}{get\+Cells}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} $\ast$ $>$ \mbox{\hyperlink{class_ranger_fusion_a508780d52ba13fa9821468d9e363be4d}{get\+Rangers}} ()
+\begin{DoxyCompactList}\small\item\em A vector to populate raw data. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ranger_fusion_a5ce35a2698d1759444d6012b1b9e6f5f}{set\+Cellside}} (double cellside)
+\item 
+double \mbox{\hyperlink{class_ranger_fusion_a7215e5405e808b5a853984e2b70ed6ad}{get\+Scanning\+Area}} ()
+\item 
+double \mbox{\hyperlink{class_ranger_fusion_a7839830a15ed2c845548d0b77c5725ac}{get\+\_\+\+Angular\+Resolution}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a86d80be8e59d5c0f75822993b09ed7bf}{get\+Angualar\+\_\+\+Offset}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a3a4d320a2968afae3eaf0afa4d429d6c}{get\+Laser\+Data}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a60f09f193327e7664184bf847b0526a6}{get\+Laser\+\_\+\+X\+Coordinate}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a591372c31e19c504b3ce2a0faa08c2f3}{get\+Laser\+\_\+\+Y\+Coordinate}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_ac689941e0617383abf84d6121c143e1c}{get\+Cellside\+\_\+\+Xcoordinate}} (double x, double cellside)
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_ad360816d586f5e899985a86ff60f9c0c}{get\+Cellside\+\_\+\+Ycoordinate}} (double y, double cellside)
+\item 
+vector$<$ cell\+::\+State $>$ \mbox{\hyperlink{class_ranger_fusion_a9ebfef349ffc91b2e915b2f2e61af14e}{laser\+\_\+fusion}} (double cell\+\_\+centerX, double cell\+\_\+centerY, double cellside, vector$<$ double $>$cellside\+\_\+\+Xcoordinate, vector$<$ double $>$cellside\+\_\+\+Ycoordinate, vector$<$ double $>$\mbox{\hyperlink{class_ranger}{Ranger}}, vector$<$ double $>$ Ranger\+\_\+\+Xcoordinate, vector$<$ double $>$ Ranger\+\_\+\+Ycoordinate)
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a4041ccb07adce51cb790330484799475}{get\+Sonar\+Data}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_a94ce9acd8a091b595cb2939f6887276c}{get\+Sonar\+\_\+\+Xcoordinate}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_fusion_acb5d1b42f0267e89ef508bff5b486327}{get\+Sonar\+\_\+\+Ycoordinate}} ()
+\item 
+vector$<$ cell\+::\+State $>$ \mbox{\hyperlink{class_ranger_fusion_a9d3c52aa816c5d37acebd7263106d61c}{Sonar\+Fusion}} (double cell\+\_\+centerX, double cell\+\_\+centerY, double cellside)
+\item 
+void \mbox{\hyperlink{class_ranger_fusion_aa9265f72bc3572567c9cf98cf6d9f0e1}{grab\+And\+Fuse\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ranger_fusion_a0236ef1613c969929e310fe8bb3d338b}\label{class_ranger_fusion_a0236ef1613c969929e310fe8bb3d338b}} 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_ranger_fusion_a0236ef1613c969929e310fe8bb3d338b}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em This is to cater for get\+Raw\+Range\+Data (which returns the raw data that was used for fusion)) \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} $\ast$ $>$ \mbox{\hyperlink{class_ranger_fusion_ae549789c0095fa08b61532fdcf23755d}{rangers\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of rangers. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ \mbox{\hyperlink{class_ranger_fusion_ac9ca9c0a3d2e8b39fb08255ab1c231df}{cells\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of cells. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_a53e89dfcd22b6087f51b1a2004d0482d}\label{class_ranger_fusion_a53e89dfcd22b6087f51b1a2004d0482d}} 
+vector$<$ vector$<$ double $>$ $>$ \mbox{\hyperlink{class_ranger_fusion_a53e89dfcd22b6087f51b1a2004d0482d}{raw\+\_\+data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of raw range data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_abda4376d8c543da0805871499be61b43}\label{class_ranger_fusion_abda4376d8c543da0805871499be61b43}} 
+double \mbox{\hyperlink{class_ranger_fusion_abda4376d8c543da0805871499be61b43}{area\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of the raw area covered by 2 cones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_a85cc4a39b459df6610f3f1bb974e7f31}\label{class_ranger_fusion_a85cc4a39b459df6610f3f1bb974e7f31}} 
+double \mbox{\hyperlink{class_ranger_fusion_a85cc4a39b459df6610f3f1bb974e7f31}{cell\+\_\+side\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of cellside ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_ac251490c3fcc4ccea364ccc0ccf86e02}\label{class_ranger_fusion_ac251490c3fcc4ccea364ccc0ccf86e02}} 
+int \mbox{\hyperlink{class_ranger_fusion_ac251490c3fcc4ccea364ccc0ccf86e02}{resolution\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of laser angular resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_ac230e4ded72de47207599d01c4c31052}\label{class_ranger_fusion_ac230e4ded72de47207599d01c4c31052}} 
+double \mbox{\hyperlink{class_ranger_fusion_ac230e4ded72de47207599d01c4c31052}{offset1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of sonar1 Angular offset. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_fusion_a117958fc8ec20f793f86165d96e66f1c}\label{class_ranger_fusion_a117958fc8ec20f793f86165d96e66f1c}} 
+double \mbox{\hyperlink{class_ranger_fusion_a117958fc8ec20f793f86165d96e66f1c}{offset2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A private copy of sonar2 Angular offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ranger_fusion_a977f1817c88c33e8f35695a530e44a9c}\label{class_ranger_fusion_a977f1817c88c33e8f35695a530e44a9c}} 
+\index{RangerFusion@{RangerFusion}!RangerFusion@{RangerFusion}}
+\index{RangerFusion@{RangerFusion}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{RangerFusion()}{RangerFusion()}}
+{\footnotesize\ttfamily Ranger\+Fusion\+::\+Ranger\+Fusion (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} $\ast$ $>$}]{rangers }\end{DoxyParamCaption})}
+
+
+
+$<$\mbox{\hyperlink{class_ranger}{Ranger}} fusion contructor to hold all the rangers 
+
+The Default constructor sets the cell centre to values within the \#\+M\+A\+P\+\_\+\+S\+I\+ZE~\newline
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ranger_fusion_interface}{Ranger\+Fusion\+Interface}} and 
+
+\mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} for more information 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ranger_fusion_a7839830a15ed2c845548d0b77c5725ac}\label{class_ranger_fusion_a7839830a15ed2c845548d0b77c5725ac}} 
+\index{RangerFusion@{RangerFusion}!get\_AngularResolution@{get\_AngularResolution}}
+\index{get\_AngularResolution@{get\_AngularResolution}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{get\_AngularResolution()}{get\_AngularResolution()}}
+{\footnotesize\ttfamily double Ranger\+Fusion\+::get\+\_\+\+Angular\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the Angular Reslusion of the laser \begin{DoxyReturn}{Returns}
+The value of the laser Angular resolution 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a7839830a15ed2c845548d0b77c5725ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a7839830a15ed2c845548d0b77c5725ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a86d80be8e59d5c0f75822993b09ed7bf}\label{class_ranger_fusion_a86d80be8e59d5c0f75822993b09ed7bf}} 
+\index{RangerFusion@{RangerFusion}!getAngualar\_Offset@{getAngualar\_Offset}}
+\index{getAngualar\_Offset@{getAngualar\_Offset}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getAngualar\_Offset()}{getAngualar\_Offset()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Angualar\+\_\+\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the Angular Offset of the \mbox{\hyperlink{class_sonar}{Sonar}} \begin{DoxyReturn}{Returns}
+The deside vector to store all sonar\textquotesingle{}s Angular Offset 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a86d80be8e59d5c0f75822993b09ed7bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a86d80be8e59d5c0f75822993b09ed7bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_ab2e0396006455dc94c7d5bbf095a7761}\label{class_ranger_fusion_ab2e0396006455dc94c7d5bbf095a7761}} 
+\index{RangerFusion@{RangerFusion}!getCells@{getCells}}
+\index{getCells@{getCells}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getCells()}{getCells()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ Ranger\+Fusion\+::get\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the cell Cells \begin{DoxyReturn}{Returns}
+The desired vector to store all cells 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ranger_fusion_ac689941e0617383abf84d6121c143e1c}\label{class_ranger_fusion_ac689941e0617383abf84d6121c143e1c}} 
+\index{RangerFusion@{RangerFusion}!getCellside\_Xcoordinate@{getCellside\_Xcoordinate}}
+\index{getCellside\_Xcoordinate@{getCellside\_Xcoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getCellside\_Xcoordinate()}{getCellside\_Xcoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Cellside\+\_\+\+Xcoordinate (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{cellside }\end{DoxyParamCaption})}
+
+Member function get the X coordinate of 2 oposite point of the cell \begin{DoxyReturn}{Returns}
+The deside vector to store X coordinate of 2 oposite point of the cell 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_ac689941e0617383abf84d6121c143e1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_ad360816d586f5e899985a86ff60f9c0c}\label{class_ranger_fusion_ad360816d586f5e899985a86ff60f9c0c}} 
+\index{RangerFusion@{RangerFusion}!getCellside\_Ycoordinate@{getCellside\_Ycoordinate}}
+\index{getCellside\_Ycoordinate@{getCellside\_Ycoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getCellside\_Ycoordinate()}{getCellside\_Ycoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Cellside\+\_\+\+Ycoordinate (\begin{DoxyParamCaption}\item[{double}]{y,  }\item[{double}]{cellside }\end{DoxyParamCaption})}
+
+Member function get the Y coordinate of 2 oposite point of the cell \begin{DoxyReturn}{Returns}
+The deside vector to store Y coordinate of 2 oposite point of the cell 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_ad360816d586f5e899985a86ff60f9c0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a60f09f193327e7664184bf847b0526a6}\label{class_ranger_fusion_a60f09f193327e7664184bf847b0526a6}} 
+\index{RangerFusion@{RangerFusion}!getLaser\_XCoordinate@{getLaser\_XCoordinate}}
+\index{getLaser\_XCoordinate@{getLaser\_XCoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getLaser\_XCoordinate()}{getLaser\_XCoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Laser\+\_\+\+X\+Coordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the X coordinate of each laser line \begin{DoxyReturn}{Returns}
+The deside vector to store the laser X coordinate data after the program implimented 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a60f09f193327e7664184bf847b0526a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a60f09f193327e7664184bf847b0526a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a591372c31e19c504b3ce2a0faa08c2f3}\label{class_ranger_fusion_a591372c31e19c504b3ce2a0faa08c2f3}} 
+\index{RangerFusion@{RangerFusion}!getLaser\_YCoordinate@{getLaser\_YCoordinate}}
+\index{getLaser\_YCoordinate@{getLaser\_YCoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getLaser\_YCoordinate()}{getLaser\_YCoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Laser\+\_\+\+Y\+Coordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the Y coordinate of each laser line \begin{DoxyReturn}{Returns}
+The deside vector to store the laser Y coordinate data after the program implimented 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a591372c31e19c504b3ce2a0faa08c2f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a591372c31e19c504b3ce2a0faa08c2f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a3a4d320a2968afae3eaf0afa4d429d6c}\label{class_ranger_fusion_a3a4d320a2968afae3eaf0afa4d429d6c}} 
+\index{RangerFusion@{RangerFusion}!getLaserData@{getLaserData}}
+\index{getLaserData@{getLaserData}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getLaserData()}{getLaserData()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Ranger\+Fusion\+::get\+Laser\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the laser data \begin{DoxyReturn}{Returns}
+The deside vector to store the laser data after the program implimented 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a3a4d320a2968afae3eaf0afa4d429d6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a508780d52ba13fa9821468d9e363be4d}\label{class_ranger_fusion_a508780d52ba13fa9821468d9e363be4d}} 
+\index{RangerFusion@{RangerFusion}!getRangers@{getRangers}}
+\index{getRangers@{getRangers}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getRangers()}{getRangers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} $\ast$ $>$ Ranger\+Fusion\+::get\+Rangers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A vector to populate raw data. 
+
+Member function get the rangers implimented \begin{DoxyReturn}{Returns}
+The desired vector to store all the rangers 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a508780d52ba13fa9821468d9e363be4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a8747f12610ff7a5d91d5f20deb3b22d7}\label{class_ranger_fusion_a8747f12610ff7a5d91d5f20deb3b22d7}} 
+\index{RangerFusion@{RangerFusion}!getRawRangeData@{getRawRangeData}}
+\index{getRawRangeData@{getRawRangeData}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getRawRangeData()}{getRawRangeData()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ double $>$ $>$ Ranger\+Fusion\+::get\+Raw\+Range\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for pre-\/fused data. 
+
+Set up the cell.
+
+Inner working\+: Resize the raw\+\_\+data\+\_\+ 2D vector with the number of rangers created. Then populate each sub-\/vector with generate\+Data method \begin{DoxyReturn}{Returns}
+2D vector of double of reading values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_fusion_interface_a9d60ca5866261026b870d7c0171587f5}{Ranger\+Fusion\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_fusion_a7215e5405e808b5a853984e2b70ed6ad}\label{class_ranger_fusion_a7215e5405e808b5a853984e2b70ed6ad}} 
+\index{RangerFusion@{RangerFusion}!getScanningArea@{getScanningArea}}
+\index{getScanningArea@{getScanningArea}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getScanningArea()}{getScanningArea()}}
+{\footnotesize\ttfamily double Ranger\+Fusion\+::get\+Scanning\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Member function get the area covered by 2 sonars \begin{DoxyReturn}{Returns}
+The desired value of the area covered by 2 sonars 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_fusion_interface_a65155605804376da4f67baf3c6f97f40}{Ranger\+Fusion\+Interface}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a7215e5405e808b5a853984e2b70ed6ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a94ce9acd8a091b595cb2939f6887276c}\label{class_ranger_fusion_a94ce9acd8a091b595cb2939f6887276c}} 
+\index{RangerFusion@{RangerFusion}!getSonar\_Xcoordinate@{getSonar\_Xcoordinate}}
+\index{getSonar\_Xcoordinate@{getSonar\_Xcoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getSonar\_Xcoordinate()}{getSonar\_Xcoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Sonar\+\_\+\+Xcoordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the X coordinates of all sonars \begin{DoxyReturn}{Returns}
+The deside vector to store the sonar X coordinate data after the program implimented 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a94ce9acd8a091b595cb2939f6887276c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a94ce9acd8a091b595cb2939f6887276c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_acb5d1b42f0267e89ef508bff5b486327}\label{class_ranger_fusion_acb5d1b42f0267e89ef508bff5b486327}} 
+\index{RangerFusion@{RangerFusion}!getSonar\_Ycoordinate@{getSonar\_Ycoordinate}}
+\index{getSonar\_Ycoordinate@{getSonar\_Ycoordinate}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getSonar\_Ycoordinate()}{getSonar\_Ycoordinate()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Sonar\+\_\+\+Ycoordinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the Y coordinates of all sonars \begin{DoxyReturn}{Returns}
+The deside vector to store the sonar Y coordinate data after the program implimented 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_acb5d1b42f0267e89ef508bff5b486327_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_acb5d1b42f0267e89ef508bff5b486327_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a4041ccb07adce51cb790330484799475}\label{class_ranger_fusion_a4041ccb07adce51cb790330484799475}} 
+\index{RangerFusion@{RangerFusion}!getSonarData@{getSonarData}}
+\index{getSonarData@{getSonarData}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{getSonarData()}{getSonarData()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Ranger\+Fusion\+::get\+Sonar\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function get the sonar data \begin{DoxyReturn}{Returns}
+The deside vector to store the sonar data after the program implimented 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a4041ccb07adce51cb790330484799475_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_aa9265f72bc3572567c9cf98cf6d9f0e1}\label{class_ranger_fusion_aa9265f72bc3572567c9cf98cf6d9f0e1}} 
+\index{RangerFusion@{RangerFusion}!grabAndFuseData@{grabAndFuseData}}
+\index{grabAndFuseData@{grabAndFuseData}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{grabAndFuseData()}{grabAndFuseData()}}
+{\footnotesize\ttfamily void Ranger\+Fusion\+::grab\+And\+Fuse\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Member function Grab and Fuse data \begin{DoxyReturn}{Returns}
+the state of all the \mbox{\hyperlink{class_cell}{Cell}} after data fusion 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_fusion_interface_ada6afdab2ce6d58a1bd0134f5e2be23f}{Ranger\+Fusion\+Interface}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_aa9265f72bc3572567c9cf98cf6d9f0e1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a9ebfef349ffc91b2e915b2f2e61af14e}\label{class_ranger_fusion_a9ebfef349ffc91b2e915b2f2e61af14e}} 
+\index{RangerFusion@{RangerFusion}!laser\_fusion@{laser\_fusion}}
+\index{laser\_fusion@{laser\_fusion}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{laser\_fusion()}{laser\_fusion()}}
+{\footnotesize\ttfamily vector$<$ cell\+::\+State $>$ Ranger\+Fusion\+::laser\+\_\+fusion (\begin{DoxyParamCaption}\item[{double}]{cell\+\_\+centerX,  }\item[{double}]{cell\+\_\+centerY,  }\item[{double}]{cellside,  }\item[{vector$<$ double $>$}]{cellside\+\_\+\+Xcoordinate,  }\item[{vector$<$ double $>$}]{cellside\+\_\+\+Ycoordinate,  }\item[{vector$<$ double $>$}]{Ranger,  }\item[{vector$<$ double $>$}]{Ranger\+\_\+\+Xcoordinate,  }\item[{vector$<$ double $>$}]{Ranger\+\_\+\+Ycoordinate }\end{DoxyParamCaption})}
+
+Member function consider relative position of the laser and cell \begin{DoxyReturn}{Returns}
+The deside vector to store all of the states of cells 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a9ebfef349ffc91b2e915b2f2e61af14e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_ae3128f8cc8f4cb955d8db661aefba3dc}\label{class_ranger_fusion_ae3128f8cc8f4cb955d8db661aefba3dc}} 
+\index{RangerFusion@{RangerFusion}!setCells@{setCells}}
+\index{setCells@{setCells}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{setCells()}{setCells()}}
+{\footnotesize\ttfamily void Ranger\+Fusion\+::set\+Cells (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$}]{cells }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A function to get all the cell implimented. 
+
+Member function sets Cells \begin{DoxyReturn}{Returns}
+The desired vector to store all cells 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_fusion_interface_ab0b45c2c462124ce74d54eb226044beb}{Ranger\+Fusion\+Interface}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_ae3128f8cc8f4cb955d8db661aefba3dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a5ce35a2698d1759444d6012b1b9e6f5f}\label{class_ranger_fusion_a5ce35a2698d1759444d6012b1b9e6f5f}} 
+\index{RangerFusion@{RangerFusion}!setCellside@{setCellside}}
+\index{setCellside@{setCellside}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{setCellside()}{setCellside()}}
+{\footnotesize\ttfamily double Ranger\+Fusion\+::set\+Cellside (\begin{DoxyParamCaption}\item[{double}]{cellside }\end{DoxyParamCaption})}
+
+Member function set the cellside \begin{DoxyReturn}{Returns}
+The desired value of the cell side 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a5ce35a2698d1759444d6012b1b9e6f5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_fusion_a9d3c52aa816c5d37acebd7263106d61c}\label{class_ranger_fusion_a9d3c52aa816c5d37acebd7263106d61c}} 
+\index{RangerFusion@{RangerFusion}!SonarFusion@{SonarFusion}}
+\index{SonarFusion@{SonarFusion}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{SonarFusion()}{SonarFusion()}}
+{\footnotesize\ttfamily vector$<$ cell\+::\+State $>$ Ranger\+Fusion\+::\+Sonar\+Fusion (\begin{DoxyParamCaption}\item[{double}]{cell\+\_\+centerX,  }\item[{double}]{cell\+\_\+centerY,  }\item[{double}]{cellside }\end{DoxyParamCaption})}
+
+Member function consider relative position between the sonar and cells \begin{DoxyReturn}{Returns}
+The deside vector to store all of the states of cells 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a9d3c52aa816c5d37acebd7263106d61c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_fusion_a9d3c52aa816c5d37acebd7263106d61c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ranger_fusion_ac9ca9c0a3d2e8b39fb08255ab1c231df}\label{class_ranger_fusion_ac9ca9c0a3d2e8b39fb08255ab1c231df}} 
+\index{RangerFusion@{RangerFusion}!cells\_@{cells\_}}
+\index{cells\_@{cells\_}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{cells\_}{cells\_}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_cell}{Cell}}$\ast$$>$ Ranger\+Fusion\+::cells\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A private copy of cells. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_cell}{Cell}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_ranger_fusion_ae549789c0095fa08b61532fdcf23755d}\label{class_ranger_fusion_ae549789c0095fa08b61532fdcf23755d}} 
+\index{RangerFusion@{RangerFusion}!rangers\_@{rangers\_}}
+\index{rangers\_@{rangers\_}!RangerFusion@{RangerFusion}}
+\doxysubsubsection{\texorpdfstring{rangers\_}{rangers\_}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}}$\ast$$>$ Ranger\+Fusion\+::rangers\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A private copy of rangers. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rangerfusion.\+h\item 
+rangerfusion.\+cpp\end{DoxyCompactItemize}

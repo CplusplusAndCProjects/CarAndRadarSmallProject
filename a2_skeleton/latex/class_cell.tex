@@ -1,0 +1,161 @@
+\hypertarget{class_cell}{}\doxysection{Cell Class Reference}
+\label{class_cell}\index{Cell@{Cell}}
+
+
+Cells will be used as areas of space (rectangles) where the sensor data will be fused to indicate occupancy, default size provided, centre location draw randonly from a map of max size. On creation state is U\+N\+K\+N\+O\+WN.  
+
+
+
+
+{\ttfamily \#include $<$cell.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_a394510643e8664cf12b5efaf5cb99f71}{Cell}} ()
+\item 
+void \mbox{\hyperlink{class_cell_a9c4fd400ffbf61fe18073f3b244614ab}{set\+Side}} (double side)
+\item 
+double \mbox{\hyperlink{class_cell_a8369e6773b462215ea3c13d216621cb7}{get\+Side}} (void)
+\item 
+double \mbox{\hyperlink{class_cell_ad4fa31d97490fac2a1d11f3afaea4e67}{area}} (void)
+\item 
+double \mbox{\hyperlink{class_cell_af02495b8e758ee82478134fd491f3e13}{perimeter}} (void)
+\item 
+void \mbox{\hyperlink{class_cell_a882f75366d9cf6477d1fd7f9dd54519b}{set\+Centre}} (double x, double y)
+\item 
+void \mbox{\hyperlink{class_cell_a1087822ba50d7afea999824cca8cc1f4}{get\+Centre}} (double \&x, double \&y)
+\item 
+cell\+::\+State \mbox{\hyperlink{class_cell_aba131004c3f0bade13ef1b72e5694885}{get\+State}} ()
+\item 
+void \mbox{\hyperlink{class_cell_adeb7a033171fa07557e756f3fcc4717d}{set\+State}} (cell\+::\+State)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cell_a5a5d7019386c126d1bd3920289a08c42}\label{class_cell_a5a5d7019386c126d1bd3920289a08c42}} 
+double \mbox{\hyperlink{class_cell_a5a5d7019386c126d1bd3920289a08c42}{side\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Sides of the cell (which is rectangle shape so has equal width and height) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cell_ab07d4ece32b7d7fbe4a3221c27eddae3}\label{class_cell_ab07d4ece32b7d7fbe4a3221c27eddae3}} 
+double \mbox{\hyperlink{class_cell_ab07d4ece32b7d7fbe4a3221c27eddae3}{centre\+X\+\_\+}}
+\begin{DoxyCompactList}\small\item\em X coordinate of centre of shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cell_adaa7675d333a26cb8651b340582afb32}\label{class_cell_adaa7675d333a26cb8651b340582afb32}} 
+double \mbox{\hyperlink{class_cell_adaa7675d333a26cb8651b340582afb32}{centre\+Y\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Y coordinate of centre of shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cell_a970daab1751b80c171f168c541936bf5}\label{class_cell_a970daab1751b80c171f168c541936bf5}} 
+cell\+::\+State \mbox{\hyperlink{class_cell_a970daab1751b80c171f168c541936bf5}{state\+\_\+}}
+\begin{DoxyCompactList}\small\item\em State of cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cells will be used as areas of space (rectangles) where the sensor data will be fused to indicate occupancy, default size provided, centre location draw randonly from a map of max size. On creation state is U\+N\+K\+N\+O\+WN. 
+
+The \mbox{\hyperlink{class_cell}{Cell}} will be used for fusion accordinly\+: ~\newline
+If the sensor intersects the cell and goes through \mbox{\hyperlink{class_cell}{Cell}} will be F\+R\+EE~\newline
+If the sensor has a return from within \mbox{\hyperlink{class_cell}{Cell}}, it will be O\+C\+C\+U\+P\+I\+ED~\newline
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cell_a394510643e8664cf12b5efaf5cb99f71}\label{class_cell_a394510643e8664cf12b5efaf5cb99f71}} 
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily Cell\+::\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The Default constructor sets the cell centre to values within the \#\+M\+A\+P\+\_\+\+S\+I\+ZE~\newline
+\begin{DoxyNote}{Note}
+N\+O\+TE\+: The cell size is also stated as \#\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+E\+L\+L\+\_\+\+S\+I\+ZE 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cell_ad4fa31d97490fac2a1d11f3afaea4e67}\label{class_cell_ad4fa31d97490fac2a1d11f3afaea4e67}} 
+\index{Cell@{Cell}!area@{area}}
+\index{area@{area}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily double Cell\+::area (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Member function to get area of cell \begin{DoxyReturn}{Returns}
+area of cell \mbox{[}m2\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cell_a1087822ba50d7afea999824cca8cc1f4}\label{class_cell_a1087822ba50d7afea999824cca8cc1f4}} 
+\index{Cell@{Cell}!getCentre@{getCentre}}
+\index{getCentre@{getCentre}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getCentre()}{getCentre()}}
+{\footnotesize\ttfamily void Cell\+::get\+Centre (\begin{DoxyParamCaption}\item[{double \&}]{x,  }\item[{double \&}]{y }\end{DoxyParamCaption})}
+
+Member function to get centre of cell 
+\begin{DoxyParams}{Parameters}
+{\em x} & centre coordinate x \mbox{[}m\mbox{]} \\
+\hline
+{\em y} & centre coordinate y \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cell_a8369e6773b462215ea3c13d216621cb7}\label{class_cell_a8369e6773b462215ea3c13d216621cb7}} 
+\index{Cell@{Cell}!getSide@{getSide}}
+\index{getSide@{getSide}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getSide()}{getSide()}}
+{\footnotesize\ttfamily double Cell\+::get\+Side (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Member function to get value of the side of cell \begin{DoxyReturn}{Returns}
+side of cell \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cell_aba131004c3f0bade13ef1b72e5694885}\label{class_cell_aba131004c3f0bade13ef1b72e5694885}} 
+\index{Cell@{Cell}!getState@{getState}}
+\index{getState@{getState}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily cell\+::\+State Cell\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Member function to get state of cell \begin{DoxyReturn}{Returns}
+state of cell 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cell_af02495b8e758ee82478134fd491f3e13}\label{class_cell_af02495b8e758ee82478134fd491f3e13}} 
+\index{Cell@{Cell}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{perimeter()}{perimeter()}}
+{\footnotesize\ttfamily double Cell\+::perimeter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Member function to get perimeter of cell \begin{DoxyReturn}{Returns}
+perimieter of cell \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cell_a882f75366d9cf6477d1fd7f9dd54519b}\label{class_cell_a882f75366d9cf6477d1fd7f9dd54519b}} 
+\index{Cell@{Cell}!setCentre@{setCentre}}
+\index{setCentre@{setCentre}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setCentre()}{setCentre()}}
+{\footnotesize\ttfamily void Cell\+::set\+Centre (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+Member function to set centre of cell 
+\begin{DoxyParams}{Parameters}
+{\em x} & centre coordinate x \mbox{[}m\mbox{]} \\
+\hline
+{\em y} & centre coordinate y \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cell_a9c4fd400ffbf61fe18073f3b244614ab}\label{class_cell_a9c4fd400ffbf61fe18073f3b244614ab}} 
+\index{Cell@{Cell}!setSide@{setSide}}
+\index{setSide@{setSide}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setSide()}{setSide()}}
+{\footnotesize\ttfamily void Cell\+::set\+Side (\begin{DoxyParamCaption}\item[{double}]{side }\end{DoxyParamCaption})}
+
+Member function sets Side 
+\begin{DoxyParams}{Parameters}
+{\em side} & The desired side length \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cell_adeb7a033171fa07557e756f3fcc4717d}\label{class_cell_adeb7a033171fa07557e756f3fcc4717d}} 
+\index{Cell@{Cell}!setState@{setState}}
+\index{setState@{setState}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Cell\+::set\+State (\begin{DoxyParamCaption}\item[{cell\+::\+State}]{state }\end{DoxyParamCaption})}
+
+Member function to set state of cell 
+\begin{DoxyParams}{Parameters}
+{\em area} & of cell \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cell.\+h\item 
+cell.\+cpp\end{DoxyCompactItemize}

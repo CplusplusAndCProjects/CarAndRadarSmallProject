@@ -1,0 +1,352 @@
+\hypertarget{class_ranger}{}\doxysection{Ranger Class Reference}
+\label{class_ranger}\index{Ranger@{Ranger}}
+
+
+The base class for \mbox{\hyperlink{class_laser}{Laser}} and Radar that inherits from the \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}}.  
+
+
+
+
+{\ttfamily \#include $<$ranger.\+h$>$}
+
+
+
+Inheritance diagram for Ranger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_ranger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ranger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_ranger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+ranger\+::\+Sensing\+Method \mbox{\hyperlink{class_ranger_a47e30b7ec55adec5bb542278ccfee140}{get\+Sensing\+Method}} (void)
+\begin{DoxyCompactList}\small\item\em Generate sensing Method for the sensor. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_a2b76dc3e21da8a7abac830d09fa81241}{generate\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Generate random values. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ranger_a568c2f27258fd9ba7b59ce2b667f3b05}{get\+Model}} ()
+\item 
+unsigned int \mbox{\hyperlink{class_ranger_a95b5013ae191d1e19b93fab002306718}{get\+Angular\+Resolution}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for angular resolution. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_ranger_a4bca7dce56b7959257d90b1f30bf0271}{get\+Field\+Of\+View}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for field of view. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ranger_a1952b96d8dcbeb6afa107c8453d778a5}{get\+Angular\+Offset}} (void)
+\begin{DoxyCompactList}\small\item\em Getter of current offset. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_ranger_a984a4ff207dc150151e05ef13bc5ba31}{get\+Number\+Of\+Sample}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual function getter for current number of samples. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ranger_a3dc62dcba54eefbd7a0f08cbf97d87dc}{set\+Angular\+Resolution}} (unsigned int resolution)
+\begin{DoxyCompactList}\small\item\em This function sets the angular resolution as of the parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ranger_ae1b15546cf48d942f86ea1031e9be486}{set\+Angular\+Offset}} (int offset)
+\begin{DoxyCompactList}\small\item\em This function sets the offset for the ranger. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ranger_afb5d392ca450bcce295e61c121d09157}{set\+Field\+Of\+View}} (unsigned int fov)
+\begin{DoxyCompactList}\small\item\em This functions set the field of view for the ranger,. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_aa72d4fbb0fddb8b7bac5b98afb98210a}\label{class_ranger_aa72d4fbb0fddb8b7bac5b98afb98210a}} 
+void \mbox{\hyperlink{class_ranger_aa72d4fbb0fddb8b7bac5b98afb98210a}{delay}} ()
+\begin{DoxyCompactList}\small\item\em Delay to achieve the assumed sampling rate of 1Hz. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ranger_aba5e81260e55089d9ff869051156a722}{get\+Max\+Range}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for maximum distance. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ranger_a646a06d3916179b9ebc4502bad169eec}{get\+Min\+Range}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for minimum range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ranger_aa346d7b1ce47f31ca7a2590dc5c9dc9a}\label{class_ranger_aa346d7b1ce47f31ca7a2590dc5c9dc9a}} 
+string \mbox{\hyperlink{class_ranger_aa346d7b1ce47f31ca7a2590dc5c9dc9a}{model\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_aaa7a889e6778c53c9403024929ab352b}\label{class_ranger_aaa7a889e6778c53c9403024929ab352b}} 
+vector$<$ double $>$ \mbox{\hyperlink{class_ranger_aaa7a889e6778c53c9403024929ab352b}{data\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the generated readings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_a0f8dec4bca07df9c2154c7746fd25e77}\label{class_ranger_a0f8dec4bca07df9c2154c7746fd25e77}} 
+unsigned int \mbox{\hyperlink{class_ranger_a0f8dec4bca07df9c2154c7746fd25e77}{angular\+\_\+resolution\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the angular resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_add17fe15ea0db50db1f678f9949cfc87}\label{class_ranger_add17fe15ea0db50db1f678f9949cfc87}} 
+int \mbox{\hyperlink{class_ranger_add17fe15ea0db50db1f678f9949cfc87}{offset\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the offset. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_a1f38aa37632d4b98adcdb772bc29a562}\label{class_ranger_a1f38aa37632d4b98adcdb772bc29a562}} 
+unsigned int \mbox{\hyperlink{class_ranger_a1f38aa37632d4b98adcdb772bc29a562}{field\+\_\+of\+\_\+view\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the field of view. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_abe40ff904070cebb72ee11ae2ffd2571}\label{class_ranger_abe40ff904070cebb72ee11ae2ffd2571}} 
+int \mbox{\hyperlink{class_ranger_abe40ff904070cebb72ee11ae2ffd2571}{num\+\_\+of\+\_\+samples\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the number of samples to generate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_a992042760ba6d9eb93cbce7df874433b}\label{class_ranger_a992042760ba6d9eb93cbce7df874433b}} 
+double \mbox{\hyperlink{class_ranger_a992042760ba6d9eb93cbce7df874433b}{max\+\_\+distance\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the maximum range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ranger_aefbe79bce88b110ba9d73e43a8075b52}\label{class_ranger_aefbe79bce88b110ba9d73e43a8075b52}} 
+double \mbox{\hyperlink{class_ranger_aefbe79bce88b110ba9d73e43a8075b52}{min\+\_\+distance\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Attribute to hold the minimum distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for \mbox{\hyperlink{class_laser}{Laser}} and Radar that inherits from the \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}}. 
+
+This class is inheritted from the \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}} class, serves as the base class for all sensors \begin{DoxyAuthor}{Author}
+Trong Duy Bui 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 25, 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ranger_a2b76dc3e21da8a7abac830d09fa81241}\label{class_ranger_a2b76dc3e21da8a7abac830d09fa81241}} 
+\index{Ranger@{Ranger}!generateData@{generateData}}
+\index{generateData@{generateData}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{generateData()}{generateData()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Ranger\+::generate\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generate random values. 
+
+\begin{DoxyReturn}{Returns}
+The vector of values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface}{Ranger\+Interface}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_a2b76dc3e21da8a7abac830d09fa81241_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_a1952b96d8dcbeb6afa107c8453d778a5}\label{class_ranger_a1952b96d8dcbeb6afa107c8453d778a5}} 
+\index{Ranger@{Ranger}!getAngularOffset@{getAngularOffset}}
+\index{getAngularOffset@{getAngularOffset}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getAngularOffset()}{getAngularOffset()}}
+{\footnotesize\ttfamily int Ranger\+::get\+Angular\+Offset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter of current offset. 
+
+\begin{DoxyReturn}{Returns}
+Offset as an unsigned int 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a3af867912dfc4f2cf899f53b82e85130}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_a95b5013ae191d1e19b93fab002306718}\label{class_ranger_a95b5013ae191d1e19b93fab002306718}} 
+\index{Ranger@{Ranger}!getAngularResolution@{getAngularResolution}}
+\index{getAngularResolution@{getAngularResolution}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getAngularResolution()}{getAngularResolution()}}
+{\footnotesize\ttfamily unsigned int Ranger\+::get\+Angular\+Resolution (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for angular resolution. 
+
+\begin{DoxyReturn}{Returns}
+Angular resolution as an unsigned int 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a37d4f89daffa8b2708dfc11034893552}{Ranger\+Interface}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_a95b5013ae191d1e19b93fab002306718_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_a4bca7dce56b7959257d90b1f30bf0271}\label{class_ranger_a4bca7dce56b7959257d90b1f30bf0271}} 
+\index{Ranger@{Ranger}!getFieldOfView@{getFieldOfView}}
+\index{getFieldOfView@{getFieldOfView}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getFieldOfView()}{getFieldOfView()}}
+{\footnotesize\ttfamily unsigned int Ranger\+::get\+Field\+Of\+View (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for field of view. 
+
+\begin{DoxyReturn}{Returns}
+Field of view as an unsigned int 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a18716da6932402b8dda75f682be6f06c}{Ranger\+Interface}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_a4bca7dce56b7959257d90b1f30bf0271_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_aba5e81260e55089d9ff869051156a722}\label{class_ranger_aba5e81260e55089d9ff869051156a722}} 
+\index{Ranger@{Ranger}!getMaxRange@{getMaxRange}}
+\index{getMaxRange@{getMaxRange}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getMaxRange()}{getMaxRange()}}
+{\footnotesize\ttfamily double Ranger\+::get\+Max\+Range (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for maximum distance. 
+
+\begin{DoxyReturn}{Returns}
+Max range as a double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a0bb29a41de5767c99081002c0590c186}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_a646a06d3916179b9ebc4502bad169eec}\label{class_ranger_a646a06d3916179b9ebc4502bad169eec}} 
+\index{Ranger@{Ranger}!getMinRange@{getMinRange}}
+\index{getMinRange@{getMinRange}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getMinRange()}{getMinRange()}}
+{\footnotesize\ttfamily double Ranger\+::get\+Min\+Range (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Getter for minimum range. 
+
+\begin{DoxyReturn}{Returns}
+Minimum range as a double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_ae6d501ddeeaad4a7b44d7d51ce64cb88}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_a568c2f27258fd9ba7b59ce2b667f3b05}\label{class_ranger_a568c2f27258fd9ba7b59ce2b667f3b05}} 
+\index{Ranger@{Ranger}!getModel@{getModel}}
+\index{getModel@{getModel}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getModel()}{getModel()}}
+{\footnotesize\ttfamily std\+::string Ranger\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+The model as a string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ranger_a984a4ff207dc150151e05ef13bc5ba31}\label{class_ranger_a984a4ff207dc150151e05ef13bc5ba31}} 
+\index{Ranger@{Ranger}!getNumberOfSample@{getNumberOfSample}}
+\index{getNumberOfSample@{getNumberOfSample}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getNumberOfSample()}{getNumberOfSample()}}
+{\footnotesize\ttfamily int Ranger\+::get\+Number\+Of\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual function getter for current number of samples. 
+
+\begin{DoxyReturn}{Returns}
+Number of samples as an int 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_sonar_a058b9e78ec5ac9cde94f3df03536c630}{Sonar}}, and \mbox{\hyperlink{class_laser_a432155ce403cb4e20fa866a24135e155}{Laser}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_a984a4ff207dc150151e05ef13bc5ba31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ranger_a984a4ff207dc150151e05ef13bc5ba31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ranger_a47e30b7ec55adec5bb542278ccfee140}\label{class_ranger_a47e30b7ec55adec5bb542278ccfee140}} 
+\index{Ranger@{Ranger}!getSensingMethod@{getSensingMethod}}
+\index{getSensingMethod@{getSensingMethod}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{getSensingMethod()}{getSensingMethod()}}
+{\footnotesize\ttfamily ranger\+::\+Sensing\+Method Ranger\+::get\+Sensing\+Method (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generate sensing Method for the sensor. 
+
+Member function get Sensing Method \begin{DoxyReturn}{Returns}
+side of cell \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_aeb06b9835f2b162b81917bd27797549b}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_ae1b15546cf48d942f86ea1031e9be486}\label{class_ranger_ae1b15546cf48d942f86ea1031e9be486}} 
+\index{Ranger@{Ranger}!setAngularOffset@{setAngularOffset}}
+\index{setAngularOffset@{setAngularOffset}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{setAngularOffset()}{setAngularOffset()}}
+{\footnotesize\ttfamily bool Ranger\+::set\+Angular\+Offset (\begin{DoxyParamCaption}\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function sets the offset for the ranger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & desired offset for the ranger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the offset is set successfully 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a2ac537778d99306a378d151c544426dc}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_a3dc62dcba54eefbd7a0f08cbf97d87dc}\label{class_ranger_a3dc62dcba54eefbd7a0f08cbf97d87dc}} 
+\index{Ranger@{Ranger}!setAngularResolution@{setAngularResolution}}
+\index{setAngularResolution@{setAngularResolution}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{setAngularResolution()}{setAngularResolution()}}
+{\footnotesize\ttfamily bool Ranger\+::set\+Angular\+Resolution (\begin{DoxyParamCaption}\item[{unsigned int}]{resolution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function sets the angular resolution as of the parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & desired angular resolution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the angular resolution is set successfully 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_aecffc9bbb58379da741c18326b9e41db}{Ranger\+Interface}}.
+
+\mbox{\Hypertarget{class_ranger_afb5d392ca450bcce295e61c121d09157}\label{class_ranger_afb5d392ca450bcce295e61c121d09157}} 
+\index{Ranger@{Ranger}!setFieldOfView@{setFieldOfView}}
+\index{setFieldOfView@{setFieldOfView}!Ranger@{Ranger}}
+\doxysubsubsection{\texorpdfstring{setFieldOfView()}{setFieldOfView()}}
+{\footnotesize\ttfamily bool Ranger\+::set\+Field\+Of\+View (\begin{DoxyParamCaption}\item[{unsigned int}]{fov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This functions set the field of view for the ranger,. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & desired field of view \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the field of view is set successfully 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ranger_interface_a70357ca516198af45e2d503ef6af8f9f}{Ranger\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ranger.\+h\item 
+ranger.\+cpp\end{DoxyCompactItemize}

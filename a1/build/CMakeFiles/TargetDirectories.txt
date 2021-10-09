@@ -1,0 +1,10 @@
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/rebuild_cache.dir
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/edit_cache.dir
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/test.dir
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/racing_ex.dir
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/analysis.dir
+/home/glacio/Desktop/quiz3/a1/build/CMakeFiles/displayrace.dir
+/home/glacio/Desktop/quiz3/a1/build/test/CMakeFiles/rebuild_cache.dir
+/home/glacio/Desktop/quiz3/a1/build/test/CMakeFiles/edit_cache.dir
+/home/glacio/Desktop/quiz3/a1/build/test/CMakeFiles/test.dir
+/home/glacio/Desktop/quiz3/a1/build/test/CMakeFiles/utest.dir

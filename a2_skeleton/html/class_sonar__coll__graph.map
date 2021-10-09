@@ -1,0 +1,5 @@
+<map id="Sonar" name="Sonar">
+<area shape="rect" id="node1" title="The Radar class derived from the base class Ranger." alt="" coords="35,155,91,181"/>
+<area shape="rect" id="node2" href="$class_ranger.html" title="The base class for Laser and Radar that inherits from the RangerInterface." alt="" coords="31,80,95,107"/>
+<area shape="rect" id="node3" href="$class_ranger_interface.html" title="Specifies the functionality for the Ranger Class, your Ranger class must inherit from it...." alt="" coords="5,5,120,32"/>
+</map>

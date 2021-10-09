@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11  -rdynamic CMakeFiles/fusionTests.dir/test_fusion.cpp.o  -o fusionTests  /usr/src/gtest/lib/libgtest.a -lpthread libmock_lib.a 

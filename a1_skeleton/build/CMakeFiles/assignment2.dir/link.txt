@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11  -rdynamic CMakeFiles/assignment2.dir/main.cpp.o  -o assignment2  libranger_lib.a libcell.a 

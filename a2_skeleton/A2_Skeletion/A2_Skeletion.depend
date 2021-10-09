@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\cell.cpp
+	"cell.h"
+	<random>
+	<chrono>
+
+1604646789 e:\projects\cplusplusproject\job1\a2_skeleton\cell.h
+
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\laser.cpp
+	"laser.h"
+	<random>
+	<chrono>
+
+1631380214 e:\projects\cplusplusproject\job1\a2_skeleton\laser.h
+	"ranger.h"
+
+1631380345 e:\projects\cplusplusproject\job1\a2_skeleton\ranger.h
+	<string>
+	<chrono>
+	<random>
+	<thread>
+	"rangerinterface.h"
+
+1604646789 e:\projects\cplusplusproject\job1\a2_skeleton\rangerinterface.h
+	<vector>
+	"cell.h"
+
+1631379161 source:e:\projects\cplusplusproject\job1\a2_skeleton\main.cpp
+	<iostream>
+	<limits>
+	"laser.h"
+	"ranger.h"
+	"sonar.h"
+	"rangerfusion.h"
+	<set>
+
+1631380270 e:\projects\cplusplusproject\job1\a2_skeleton\sonar.h
+	<string>
+	"ranger.h"
+
+1604646789 e:\projects\cplusplusproject\job1\a2_skeleton\rangerfusion.h
+	<vector>
+	"rangerfusioninterface.h"
+	"rangerinterface.h"
+	<tgmath.h>
+	"cell.h"
+	"ranger.h"
+	<math.h>
+	<iterator>
+	<bits/stdc++.h>
+
+1604646789 e:\projects\cplusplusproject\job1\a2_skeleton\rangerfusioninterface.h
+	<vector>
+	"rangerinterface.h"
+	"cell.h"
+
+1631378433 source:e:\projects\cplusplusproject\job1\a2_skeleton\ranger.cpp
+	"ranger.h"
+	<unistd.h>
+
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\rangerfusion.cpp
+	"rangerfusion.h"
+
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\rangerfusioninterface.cpp
+	"rangerfusioninterface.h"
+
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\rangerinterface.cpp
+	"rangerinterface.h"
+
+1604646789 source:e:\projects\cplusplusproject\job1\a2_skeleton\sonar.cpp
+	"sonar.h"
+

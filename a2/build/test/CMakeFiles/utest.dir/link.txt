@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -no-pie -pthread  -rdynamic CMakeFiles/utest.dir/utest.cpp.o  -o utest   -L/home/glacio/Desktop/quiz3/a2/dep  -Wl,-rpath,/home/glacio/Desktop/quiz3/a2/dep /usr/src/gtest/lib/libgtest.a /usr/src/gtest/lib/libgtest_main.a ../libanalysis.a /usr/src/gtest/lib/libgtest.a -lpthread -lradar 
