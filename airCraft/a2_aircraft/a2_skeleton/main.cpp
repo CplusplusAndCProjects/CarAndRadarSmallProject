@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 {
 
    Control_aircraft *control_aircraft = new Control_aircraft();
-   control_aircraft->ControlAircraftExample(argc, argv);
+   control_aircraft->ControlAircraft(argc, argv);
 
   return 0;
 }

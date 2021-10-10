@@ -32,7 +32,7 @@ endif("${RELEASE_CODENAME}" STREQUAL "xenial")
 # Finding and linking against the simulator library
 set(SIMULATOR_LIB ${CMAKE_SOURCE_DIR}/dep/lib/${RELEASE_CODENAME})
 set(SIMULATOR_INCLUDE ${CMAKE_SOURCE_DIR}/dep/include)
-
+set(IMPLEMENT_INCLUDE ${CMAKE_SOURCE_DIR}/header)
 include_directories(
   ${OpenCV_INCLUDE_DIRS}
   ${SIMULATOR_INCLUDE}
@@ -40,26 +40,35 @@ include_directories(
 
 message ( STATUS "Looking for libray in ${SIMULATOR_LIB}" )
 link_directories(${SIMULATOR_LIB})
+link_directories(${IMPLEMENT_INCLUDE})
 
 ###################################################################################################
 
 # Change your CMakeLists.txt from here.
+# The library students are developing, the one that handles racing
 
-add_library(analysis analysis.cpp)
-#target_link_libraries(analysis simulator )
-add_library(control_aircraft control_aircraft.cpp)
-#target_link_libraries(control_aircraft simulator )
-add_library(tf2 tf2.cpp)
-#target_link_libraries(tf2 simulator )
+
+#file(GLOB SOURCES "source/*.cpp")
+
+ add_library(tf2 source/tf2.cpp)
+# target_link_libraries(tf2 control_aircraft )
+
+ add_library(analysis source/analysis.cpp)
+# target_link_libraries(analysis simulator )
+# target_link_libraries(analysis control_aircraft )
+add_library(control_aircraft source/control_aircraft.cpp)
+
+# A sample executable
+# add_executable(${PROJECT_NAME}_ex main.cpp)
 
 # You will most likely be creating some additional libraries that you will use in
 # unit testsing, there are no libraries in this example
 
 # Here we declare a C++ executable
-add_executable(${PROJECT_NAME}_example main.cpp)
+add_executable(${PROJECT_NAME}_example main.cpp source/control_aircraft.cpp source/analysis.cpp source/tf2.cpp)
 
 # Link the library against OpenCV and simulator library
-target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} simulator analysis tf2 control_aircraft)
+target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} tf2 analysis simulator control_aircraft)
 
 
 #################################################################

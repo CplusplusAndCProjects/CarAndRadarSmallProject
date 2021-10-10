@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="a2_skeleton_codeBlock" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/a2_skeleton_codeBlock" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/a2_skeleton_codeBlock" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../CMakeLists.txt" />
+		<Unit filename="../analysis.cpp" />
+		<Unit filename="../analysis.h" />
+		<Unit filename="../control_aircraft.cpp" />
+		<Unit filename="../control_aircraft.h" />
+		<Unit filename="../dep/include/aircraft.h" />
+		<Unit filename="../dep/include/display.h" />
+		<Unit filename="../dep/include/simulator.h" />
+		<Unit filename="../dep/include/tf.h" />
+		<Unit filename="../dep/include/timer.h" />
+		<Unit filename="../dep/include/types.h" />
+		<Unit filename="../dep/lib/bionic/libsimulator.so" />
+		<Unit filename="../dep/lib/focal/libsimulator.so" />
+		<Unit filename="../main.cpp" />
+		<Unit filename="../test/CMakeLists.txt" />
+		<Unit filename="../test/associationtest.cpp" />
+		<Unit filename="../test/bogieextrapolationtest.cpp" />
+		<Unit filename="../test/posetest.cpp" />
+		<Unit filename="../tf2.cpp" />
+		<Unit filename="../tf2.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
