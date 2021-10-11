@@ -19,16 +19,17 @@ static vector<double> times ;
 static RangeVelocityStamped miniumBogiesRangeVelocityStamped;// = GetMiniumRangeVeclocityStampedVec(sim);
 
 static RangeBearingStamped miniumBogiesRangeBearingStamped;// = GetMiniumRangeBearingStamped(sim);
+
 static queue<Point> bogie_point;              //!< Container of all pre-future estimation pose
 static queue<double> timesToBogie; 
+static int bogieSize;
+
 class Control_aircraft
 {
 private:
     /* data */
     Simulator sim1;
     Pose miniumbogies;
-
-
 public:
     ~Control_aircraft();
 

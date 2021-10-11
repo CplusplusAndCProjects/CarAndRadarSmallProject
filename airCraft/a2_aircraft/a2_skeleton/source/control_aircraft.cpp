@@ -25,7 +25,7 @@ void Control_aircraft::ControlAircraft(int argc, char *argv[]){
   //Showing how to get airspace size (for example), constants arer accessible
   //std::cout << "Airspace Size:" << Simulator::AIRSPACE_SIZE << std::endl;
 
-
+  bogieSize = sim->rangeVelocityToBogiesFromBase().size();
   threads.push_back(sim->spawn());
   threads.push_back(std::thread(controlThread, sim));
   threads.push_back(std::thread(exampleThread, sim));
@@ -207,13 +207,13 @@ double Control_aircraft:: GetDistanceOfFriendlyWithBiogies(const std::shared_ptr
 
 Pose Control_aircraft:: Estimate_FutureBogie_Poses(queue<Point> bogie_point, queue<double> timesToBogie, double step_time)
 {
-    cout<<"Function Estimate_FutureBogie_Poses"<<endl;
+    //cout<<"Function Estimate_FutureBogie_Poses"<<endl;
     Pose bogie_position;
     Point front_pose = bogie_point.front();      //get the first pose from the container
     Point back_pose = bogie_point.back();   
     double front_time = timesToBogie.front();     //get 1st the time stamp
     double back_time = timesToBogie.back();   
-    cout<<"Step1"<<endl;
+    //cout<<"Step1"<<endl;
 
     double estimation_time = back_time + step_time;
     bogie_position.position.x = front_pose.x + (estimation_time - front_time)/(back_time - front_time)*(back_pose.x-front_pose.x);
@@ -224,12 +224,12 @@ Pose Control_aircraft:: Estimate_FutureBogie_Poses(queue<Point> bogie_point, que
 
 
 RangeBearingStamped Control_aircraft::Estimate_FutureMiniumRangeBearingStamped(RangeBearingStamped miniumRangeBearingStamped,const std::shared_ptr<Simulator> & sim){
-  cout<<"Function Estimate_FutureMiniumRangeBearingStamped"<<endl;
+  //cout<<"Function Estimate_FutureMiniumRangeBearingStamped"<<endl;
   RangeBearingStamped estimate_FutureMiniumRangeBearingStamped = miniumRangeBearingStamped;
             //!< Container to store all timestamp
   Point miniumBogiePoint = local2Global(miniumRangeBearingStamped,sim-> getFriendlyPose());
 
-int size_buffer = 20;
+  int size_buffer = 100;
   if(bogie_point.size()<size_buffer)
   {
     bogie_point.push(miniumBogiePoint);
@@ -254,10 +254,12 @@ int size_buffer = 20;
   estimate_FutureMiniumRangeBearingStamped = global2local(estimate_FutureMiniumBogiePoint.position, sim-> getFriendlyPose());
   queue<Point> bogie_point_empty;              //!< Container of all pre-future estimation pose
   queue<double> timesToBogie_empty; 
-  if(bogie_point.size()> size_buffer)
+  if(bogieSize != times.size())
   {
     std::swap(bogie_point, bogie_point_empty);
     std::swap(timesToBogie, timesToBogie_empty);
+    bogieSize = times.size();
+    cout<<"Clear queue"<<endl;
   }
 
   return estimate_FutureMiniumRangeBearingStamped;
