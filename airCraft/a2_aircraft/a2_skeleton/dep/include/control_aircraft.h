@@ -17,13 +17,17 @@ using namespace tf2;
 
 static vector<double> times ;
 static RangeVelocityStamped miniumBogiesRangeVelocityStamped;// = GetMiniumRangeVeclocityStampedVec(sim);
+
 static RangeBearingStamped miniumBogiesRangeBearingStamped;// = GetMiniumRangeBearingStamped(sim);
+static queue<Point> bogie_point;              //!< Container of all pre-future estimation pose
+static queue<double> timesToBogie; 
 class Control_aircraft
 {
 private:
     /* data */
     Simulator sim1;
     Pose miniumbogies;
+
 
 public:
     ~Control_aircraft();
@@ -50,5 +54,6 @@ public:
     static double GetDistanceOfFriendlyWithStation(const std::shared_ptr<Simulator> & sim);
     static double GetDistanceOfFriendlyWithBiogies(const std::shared_ptr<Simulator> & sim);
     static Pose Estimate_FutureBogie_Poses(queue<Point> bogie_point, queue<double> timesToBogie, double step_time);
+    static RangeBearingStamped Estimate_FutureMiniumRangeBearingStamped(RangeBearingStamped miniumRangeBearingStamped,const std::shared_ptr<Simulator> & sim);
 };
 #endif
