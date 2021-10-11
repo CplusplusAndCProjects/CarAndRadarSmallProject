@@ -49,5 +49,6 @@ public:
     static double GetMiniumOderTimers(vector<double> times);
     static double GetDistanceOfFriendlyWithStation(const std::shared_ptr<Simulator> & sim);
     static double GetDistanceOfFriendlyWithBiogies(const std::shared_ptr<Simulator> & sim);
+    static Pose Estimate_FutureBogie_Poses(queue<Point> bogie_point, queue<double> timesToBogie, double step_time);
 };
-#endif 
+#endif

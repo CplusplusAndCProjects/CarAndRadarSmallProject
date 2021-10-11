@@ -1,5 +1,6 @@
 #include "control_aircraft.h"
 #include"tf2.h"
+
 Control_aircraft::~Control_aircraft()
 {
 }
@@ -198,8 +199,23 @@ double Control_aircraft:: GetDistanceOfFriendlyWithStation(const std::shared_ptr
     return euclideanDistance;
 
 }
-double GetDistanceOfFriendlyWithBiogies(const std::shared_ptr<Simulator> & sim){
+double Control_aircraft:: GetDistanceOfFriendlyWithBiogies(const std::shared_ptr<Simulator> & sim){
   
+}
+
+Pose Control_aircraft:: Estimate_FutureBogie_Poses(queue<Point> bogie_point, queue<double> timesToBogie, double step_time)
+{
+    Pose bogie_position;
+    Point front_pose = bogie_point.front();      //get the first pose from the container
+    Point back_pose = bogie_point.back();   
+    double front_time = timesToBogie.front();     //get 1st the time stamp
+    double back_time = timesToBogie.back();   
+
+    double estimation_time = back_time + step_time;
+    bogie_position.position.x = front_pose.x + (estimation_time - front_time)/(back_time - front_time)*(back_pose.x-front_pose.x);
+    bogie_position.position.y = front_pose.y + (estimation_time - front_time)/(back_time - front_time)*(back_pose.y-front_pose.y);
+    double bogie_position_yaw = atan2((back_pose.y-front_pose.y) , (back_pose.x-front_pose.x ));
+    return bogie_position;
 }
 
 
