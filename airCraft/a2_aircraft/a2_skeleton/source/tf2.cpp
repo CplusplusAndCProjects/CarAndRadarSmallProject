@@ -33,9 +33,7 @@ namespace tf2 {
       double theta = normaliseAngle(yaw + rangeBearing.bearing);
       p.x = aircraft.position.x+rangeBearing.range*cos(theta);
       p.y = aircraft.position.y+rangeBearing.range*sin(theta);
-
       return p;
-
     }
 
     //! @todo
@@ -61,11 +59,9 @@ namespace tf2 {
           // if (bearing < -2*M_PI)
           //   bearing+=2*M_PI;
           double bearing_drgrees = bearing *180/M_PI;
-
-          // if(bearing_drgrees < -180)
-          //     bearing_drgrees = 360 - abs(bearing_drgrees);
-          // bearing = bearing_drgrees * M_PI/180;
-
+          if(bearing_drgrees < -180 || bearing_drgrees > 180)
+            bearing_drgrees = 360 - abs(bearing_drgrees);
+          bearing = bearing_drgrees * M_PI/180;
           // The below creates a rangeBearing (which is a struct) with range =0, bearing =0 and timestamp =0
           // (the timestamp is not relevant here to us now, but in ROS it will be)
           rbstamped = {range, bearing, 0};

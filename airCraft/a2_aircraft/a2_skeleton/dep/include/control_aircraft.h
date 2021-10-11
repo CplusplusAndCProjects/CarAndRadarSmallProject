@@ -15,11 +15,16 @@ using namespace simulator;
 using namespace std;
 using namespace tf2;
 
+static vector<double> times ;
+static RangeVelocityStamped miniumBogiesRangeVelocityStamped;// = GetMiniumRangeVeclocityStampedVec(sim);
+static RangeBearingStamped miniumBogiesRangeBearingStamped;// = GetMiniumRangeBearingStamped(sim);
 class Control_aircraft
 {
 private:
     /* data */
     Simulator sim1;
+    Pose miniumbogies;
+
 public:
     ~Control_aircraft();
 
@@ -39,5 +44,10 @@ public:
     void ControlAircraft(int argc, char *argv[]);
     static vector<double> EstimateTimeToPositionOfTheBogie(const std::shared_ptr<Simulator> & sim);
     static std::vector<Point> EstimatePositionOfTheBogie( const std::shared_ptr<Simulator> & sim);
+    static RangeBearingStamped GetMiniumRangeBearingStamped(const std::shared_ptr<Simulator> & sim, Analysis &analysis);
+    static RangeVelocityStamped GetMiniumRangeVeclocityStampedVec(const std::shared_ptr<Simulator> & sim, Analysis &analysis);
+    static double GetMiniumOderTimers(vector<double> times);
+    static double GetDistanceOfFriendlyWithStation(const std::shared_ptr<Simulator> & sim);
+    static double GetDistanceOfFriendlyWithBiogies(const std::shared_ptr<Simulator> & sim);
 };
 #endif 
