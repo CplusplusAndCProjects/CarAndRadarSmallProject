@@ -28,6 +28,7 @@ namespace tf2 {
      */
 
     RangeBearingStamped global2local(Point globalBogie, Pose aircraft);
+    double GetDistanceOfBogieWithStation(Point bogie, Point staion_position);
 
     /**
      * @brief

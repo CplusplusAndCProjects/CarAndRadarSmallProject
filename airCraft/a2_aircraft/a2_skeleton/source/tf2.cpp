@@ -85,5 +85,9 @@ namespace tf2 {
 
       return theta;
     }
+  double GetDistanceOfBogieWithStation(Point bogie, Point staion_position){
 
+    double euclideanDistance = sqrt(pow((staion_position.x - bogie.x),2) + pow((bogie.y - staion_position.y),2));
+    return euclideanDistance;
+  }
 }

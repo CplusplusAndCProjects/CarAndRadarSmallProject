@@ -22,16 +22,18 @@ vector<double> Analysis::timeToImpact(Pose origin){
     //Display::V_TERM
     //Display::V_MAX
     vector<double> times;
+    //vector<RangeBearingStamped> rangeBearingStampeds = display->scan(origin);
     for (size_t i = 0; i < goals_.size(); i++)
     {
         /* code */
-        RangeBearingStamped rangeBearingS.idea/misc.xmltamped = global2local(goals_.at(i), origin);
+        RangeBearingStamped rangeBearingStamped = global2local(goals_.at(i), origin);
+        //rangeBearingStamped.timestamp = rangeBearingStampeds.at(i).timestamp;
 
-        // double bearing_drgrees = rangeBearingStamped.bearing *180/M_PI;
+        double bearing_drgrees = rangeBearingStamped.bearing *180/M_PI;
 
-        // if(bearing_drgrees < -180 || bearing_drgrees > 180)
-        //     bearing_drgrees = 360 - abs(bearing_drgrees);
-        // rangeBearingStamped.bearing = bearing_drgrees * M_PI/180;
+        if(bearing_drgrees < -180 || bearing_drgrees > 180)
+            bearing_drgrees = 360 - abs(bearing_drgrees);
+        rangeBearingStamped.bearing = bearing_drgrees * M_PI/180;
 
         double Omega_max = Simulator::G_MAX * 9.81 / Simulator::V_TERM; 
         double time = rangeBearingStamped.range/Simulator::V_MAX + rangeBearingStamped.bearing/Omega_max;
@@ -45,7 +47,7 @@ vector<double> Analysis::timeToImpact(Pose origin){
 //! TASK 4 - Refer to README.md and the Header file for full description
 AdjacencyList Analysis::exportGraph(){
 
-    //cout<<"Function exportGraph"<<endl;
+    cout<<"Function exportGraph"<<endl;
     AdjacencyList graph;
     vector<vector<EdgeInfo> > adjacencyListForMultiNode;
     unsigned int id = 0;
@@ -68,12 +70,12 @@ AdjacencyList Analysis::exportGraph(){
             edgeInfo = EdgeInfo(euclideanDistance, j);
             adjacencyListForOneNode.push_back(edgeInfo);
             id++;
-            //cout<<"Function exportGraph id = "<<id<<endl;
+            cout<<"Function exportGraph id = "<<id<<endl;
 
             /* code */
         }
 
-        //cout<<"Function finish for loop id = "<<id<<endl;
+        cout<<"Function finish for loop id = "<<id<<endl;
         adjacencyListForMultiNode.push_back(adjacencyListForOneNode);
         graph = AdjacencyList(adjacencyListForMultiNode);
         /* code */

@@ -58,6 +58,7 @@ link_directories(${IMPLEMENT_INCLUDE})
 # target_link_libraries(analysis control_aircraft )
 add_library(control_aircraft source/control_aircraft.cpp)
 
+
 # A sample executable
 # add_executable(${PROJECT_NAME}_ex main.cpp)
 
@@ -67,8 +68,10 @@ add_library(control_aircraft source/control_aircraft.cpp)
 # Here we declare a C++ executable
 add_executable(${PROJECT_NAME}_example main.cpp source/control_aircraft.cpp source/analysis.cpp source/tf2.cpp)
 
+
+
 # Link the library against OpenCV and simulator library
-target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} tf2 analysis simulator control_aircraft)
+target_link_libraries(${PROJECT_NAME}_example ${OpenCV_LIBS} tf2  analysis simulator control_aircraft)
 
 
 #################################################################
