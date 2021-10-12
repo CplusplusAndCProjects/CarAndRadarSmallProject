@@ -56,10 +56,12 @@ vector<double> Control_aircraft::EstimateTimeToPositionOfTheBogie(const std::sha
     //adjacencyListForMultiNode = analysis.exportGraph();
     times = analysis.timeToImpact(pose);
     miniumBogiesRangeVelocityStamped = GetMiniumRangeVeclocityStampedVec(sim,analysis);
+    
+    //miniumBogiesRangeBearingStamped = GetMiniumRangeBearingStamped(sim, analysis);
     miniumBogiesRangeBearingStamped_temp = GetMiniumRangeBearingStamped(sim, analysis);
     miniumBogiesRangeBearingStamped = Estimate_FutureMiniumRangeBearingStamped(miniumBogiesRangeBearingStamped_temp, sim);
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(20));
+    std::this_thread::sleep_for(std::chrono::milliseconds(timstampe));
   }
   return times;
 }
@@ -124,16 +126,22 @@ void Control_aircraft:: controlThread(const std::shared_ptr<Simulator> & sim) {
       ang = Omega_max; //2*M_PI - sim->getFriendlyAngularVelocity(); 
     }
     else
-    {
+    {   
         lin = Simulator::V_TERM;
         if(miniumBogiesRangeBearingStamped.bearing>M_PI)
         {
           ang = -Omega_max;
         }
-        else if(miniumBogiesRangeBearingStamped.bearing>M_PI/25 && miniumBogiesRangeBearingStamped.bearing<M_PI )
+        else if(miniumBogiesRangeBearingStamped.bearing>M_PI/5 && miniumBogiesRangeBearingStamped.bearing<M_PI )
         {
           ang = Omega_max;
         }
+        else if (miniumBogiesRangeBearingStamped.bearing > M_PI/90 && miniumBogiesRangeBearingStamped.bearing<M_PI/5)
+        {
+          lin = Simulator::V_MAX/2;
+          ang = 0;        
+        }
+        
         else
         {
           lin = Simulator::V_MAX;
@@ -151,7 +159,7 @@ void Control_aircraft:: controlThread(const std::shared_ptr<Simulator> & sim) {
     //std::cout << "lin= " << lin<<", ang= "<<ang <<std::endl;
     //std::cout << "result set: " << result <<std::endl;
     result = sim->controlFriendly(lin, ang);
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(timstampe));
   }
 }
 
@@ -249,7 +257,7 @@ RangeBearingStamped Control_aircraft::Estimate_FutureMiniumRangeBearingStamped(R
   }
   // if(bogie_point.size()<size_buffer)
   //   return estimate_FutureMiniumRangeBearingStamped;
-  Pose estimate_FutureMiniumBogiePoint = Estimate_FutureBogie_Poses(bogie_point, timesToBogie, 100);
+  Pose estimate_FutureMiniumBogiePoint = Estimate_FutureBogie_Poses(bogie_point, timesToBogie, timstampe);
 
   estimate_FutureMiniumRangeBearingStamped = global2local(estimate_FutureMiniumBogiePoint.position, sim-> getFriendlyPose());
   queue<Point> bogie_point_empty;              //!< Container of all pre-future estimation pose

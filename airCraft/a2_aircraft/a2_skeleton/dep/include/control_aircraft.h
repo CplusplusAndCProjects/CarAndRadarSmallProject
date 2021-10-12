@@ -23,6 +23,7 @@ static RangeBearingStamped miniumBogiesRangeBearingStamped;// = GetMiniumRangeBe
 static queue<Point> bogie_point;              //!< Container of all pre-future estimation pose
 static queue<double> timesToBogie; 
 static int bogieSize;
+static const int timstampe = 50;
 
 class Control_aircraft
 {
