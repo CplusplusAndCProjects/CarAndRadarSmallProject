@@ -1,0 +1,67 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage ASSIGNMENT 3: THREADING, SYNCHRONISATION AND DATA INTEGRITY
+
+Name: Trong Duy Bui
+
+SID: 13432190
+
+@section ac_doc_scenario Scenario
+
+An aircraft is patrolling space surrounding a base station. The aircrafts task is to localise enemy aircraft (bogies) that enters the airspace and intercept the aircraft.The aircraft is controlled by supplying desired linear velocity and angular velocity(V and ω) that the on-board systems immediately responds to, as long as these controls are within operational parameters of aircraft. The controlled linear velocity cannot be less than a terminal velocity (50 m/s), otherwise the aircraft will stall and fall from the sky, or above max velocity (900 m/s). 
+The combination of linear and angular velocity cannot exceed 6G (safety limit forthe pilot : calculated as V * ω / g ; g being gravitational force).A watchdog timer in the control systems monitors that control input is supplied every 25-50ms If the control is not supplied every 50ms the control system will fail (and the application is terminated). If the control is supplied more frequently than 25ms it will be ignored
+
+@section ac_doc_brief_description Brief Description
+
+There are 2 main classes in this project:
+
++ Radar (BaseRadar and FriendlyRadar): Inherit from RadarInterface
++ Synchronization: get the data from 2 Radars for further calculation
+
+=> These interface base classes are designed with the idea of allowing a different implementation of each derived class while ensuring the connection between them in order to perform the given task.
+
+These 2 classes work together in the following orders:
+
+Radars ---(range, bearing, velocity, timestamp)---> Synchronization ----(data syncronization, Bogie Pose estimation, PurePursuit) 
+
+Radar (BaseRadar and AircraftRadar):
++ input: simulator
++ output: vector RangeVelocityStamped type data is the range from bogie to base, velocity of all bogies in air space and time elasped; vector RangeBearingStamped type is the range from bogies to base, bearing of Friendly aircraft and time elasped
+
+
+There are also 4 threads running at the same time to ensure the following criteria:
++ No loss of data from the radars
++ Synchronisation of the data will always output pose data
++ The aircraft will recieve a control signal in a time interval less than 50 ms
++ The aircraft will always stays within airspace
+
+The main initialises all of the above objects, setting the corresponding vectors of pointers for each object and start pursuiting the bogie in a while loop.
+
+NOTE: for reuse purposes, please write your custom classes based on the interfaces classes provided in this project to ensure proper connection between different classes.
+
+
+@section ac_doc_find_real_bogie_logic_explanation Find real bogie logic explanation
+
+From datas given by 2 radars, we can easily calculate the position of 4 enemy bogie by:
++ x(bogie) = x(friendly) + range from bogie to friendly x cos (bearing + friendly orientation)
++ y(bogie) = y(friendly) + range from bogie to friendly x sin (bearing + friendly orientation)
+
+Using extrapolation formular to estimate the future position of bogies, we can get orientation of the bogies by
++ bogie orientation = atan2(future bogie position y - current bogie position y; future bogie position x - current bogie position x)
+
+To shadow as much enemy bogie as posible, assume that all bogies and the friendly aircraft is against each other and go on the same path to meet, we can easy calculate the time of each bogie and friendly to meet each other and choose the shortest one.
+
+Using pure pursuit method to calculate the linear and angular velocity; also, determine the turning angle of the friendly aircraft to meet the desired destination
+
+The pose estimation of all enemy aircraft will be display on the terminal to check the precision
+
+NOTE: it may take some times for the estimating thread to impact base on large estimating sample for better estimating acccuracy
+
+						**************** END OF DOCUMENT ****************
+*/
