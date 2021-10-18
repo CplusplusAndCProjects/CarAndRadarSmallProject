@@ -1,0 +1,8 @@
+prefix=/home/student/ws/pfms_ws/install
+
+Name: pfms_path_following
+Description: Description of pfms_path_following
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ldrawing_tools
+Requires: roscpp sensor_msgs std_msgs
