@@ -12,6 +12,15 @@ OgmapProcessing::OgmapProcessing(nav_msgs::OccupancyGrid map) :
 unsigned int OgmapProcessing::countUnknwonCells(){
 
   unsigned int count = 0;
+  
+  std::vector<signed char> data_arr = map_.data;
+  for (int i = 0; i < data_arr.size(); i++)
+  {
+    /* code */
+    if(data_arr.at(i)==-1)
+      count++;
+  }
+  
 
   return count;
 

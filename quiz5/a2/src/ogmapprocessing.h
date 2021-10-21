@@ -4,6 +4,7 @@
 //ROS Message Types
 #include <nav_msgs/OccupancyGrid.h>
 #include <geometry_msgs/Point.h>
+#include<vector>
 
 class OgmapProcessing
 {
