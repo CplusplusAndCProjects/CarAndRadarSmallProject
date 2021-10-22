@@ -34,14 +34,15 @@ bool OgmapProcessing::isLocationFree(geometry_msgs::Point goal){
   int row_req, col_req, row_rob, col_rob;
   geometry_msgs::Pose pose_origin = map_.info.origin;
   int index_req, index_rob;
-  row_rob = (int)(goal.x - pose_origin.position.x)/map_.info.resolution;
-  col_rob = (int)(goal.y - pose_origin.position.y)/map_.info.resolution;
+  row_rob = (int)(abs(goal.x - pose_origin.position.x))/map_.info.resolution;
+  col_rob = (int)(abs(goal.y - pose_origin.position.y))/map_.info.resolution;
 
-  bool checkcellInside = (row_rob >=0) && (col_rob >=0)  && (col_rob<map_.info.width) && (row_rob<map_.info.height);
+  if((col_rob>map_.info.width) && (row_rob>map_.info.height))
+    free = true;
+  else
+    free = false;
 
-  free != checkcellInside;
-
-  
+  //free != checkcellInside;
   return free;
 
 }
