@@ -13,6 +13,18 @@ LaserProcessing::LaserProcessing(sensor_msgs::LaserScan laserScan):
 unsigned int LaserProcessing::countHighIntensity()
 {
   unsigned int count=0;
+  std::vector<float> intensitie_arr = laserScan_.intensities;
+  for (int i = 0; i < intensitie_arr.size(); i++)
+  {
+      /* code */
+      if (intensitie_arr.at(i)>0.5)
+      {
+          count ++;
+          /* code */
+      }
+      
+  }
+  
   return count;
 }
 
@@ -21,6 +33,22 @@ unsigned int LaserProcessing::countHighIntensity()
 unsigned int LaserProcessing::countSegments()
 {
   unsigned int count=0;
+  std::vector<float> intensitie_arr = laserScan_.intensities;
+  std::vector<float> ranges_arr = laserScan_.ranges;
+
+
+  for (int i = 0; i < intensitie_arr.size(); i++)
+  {
+      std::cout<<"ranges["<<i<<"]= "<<ranges_arr.at(i)<<std::endl;
+      /* code */
+      if (intensitie_arr.at(i)>0.5 && ranges_arr.at(i)<0.3)
+      {
+          count ++;
+          /* code */
+      }
+      
+  }
+  std::cout<<"count = "<<count<<std::endl;
   return count;
 }
 
@@ -31,7 +59,24 @@ unsigned int LaserProcessing::countSegments()
 geometry_msgs::Point LaserProcessing::detectPositionHighIntensity(){
 
     geometry_msgs::Point point;
-
+    std::vector<float> intensitie_arr = laserScan_.intensities;
+    //std::vector<float> ranges_arr = laserScan_.ranges;
+    for (int i = 0; i < intensitie_arr.size(); i++)
+    {
+        //std::cout<<"ranges["<<i<<"]= "<<ranges_arr.at(i)<<std::endl;
+        /* code */
+        if (intensitie_arr.at(i)>0.5)
+        {
+            /* code */
+            float angle = laserScan_.angle_min + laserScan_.angle_increment*i;// + angle_range/2;
+            float range = laserScan_.ranges.at(i);
+            point.x = static_cast<double>(range*cos(angle));
+            point.y = static_cast<double>(range*sin(angle));
+            break;
+        }
+        
+    }
+    std::cout<<"point.x= "<<point.x<<", point.y= "<<point.y<<std::endl;
     return point;
 }
 
@@ -42,6 +87,26 @@ geometry_msgs::Pose LaserProcessing::detectPoseHighIntensity(){
 
 
     geometry_msgs::Pose pose;
+    geometry_msgs::Point point;
+    
+    std::vector<float> intensitie_arr = laserScan_.intensities;
+    //std::vector<float> ranges_arr = laserScan_.ranges;
+    for (int i = 0; i < intensitie_arr.size(); i++)
+    {
+        //std::cout<<"ranges["<<i<<"]= "<<ranges_arr.at(i)<<std::endl;
+        /* code */
+        if (intensitie_arr.at(i)>0.5)
+        {
+            /* code */
+            float angle = laserScan_.angle_min + laserScan_.angle_increment*i;// + angle_range/2;
+            float range = laserScan_.ranges.at(i);
+            point.x = static_cast<double>(range*cos(angle));
+            point.y = static_cast<double>(range*sin(angle));
+            break;
+        }
+        
+    }
+    pose.position = point;
     return pose;
 }
 

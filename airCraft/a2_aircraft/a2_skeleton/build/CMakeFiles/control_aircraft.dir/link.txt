@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcontrol_aircraft.a  CMakeFiles/control_aircraft.dir/source/control_aircraft.cpp.o
+/usr/bin/ranlib libcontrol_aircraft.a

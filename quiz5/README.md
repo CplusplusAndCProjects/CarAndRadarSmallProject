@@ -72,7 +72,7 @@ All of your programming will be in the [OgmapProcessing Class](./a2/src/ogmappro
 
 Count number of free cells in current OccupancyGrid, unknws cells have a value of -1
 
-As a reminder `rosmsg info rosmsg info nav_msgs/OccupancyGrid` will show you the `OccupancyGrid` message, you will note that data is encoded in a vectors (called data) and that we have metadata about the size of the map as well as origin (centre of map) location. Refer week 10 for examples of working with OccupancyGrid message.
+As a reminder `rosmsg info nav_msgs/OccupancyGrid` will show you the `OccupancyGrid` message, you will note that data is encoded in a vectors (called data) and that we have metadata about the size of the map as well as origin (centre of map) location. Refer week 10 for examples of working with OccupancyGrid message.
 
 **TASK 2 - Detect if position in OgMap is free**
 
