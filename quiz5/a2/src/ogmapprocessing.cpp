@@ -31,6 +31,18 @@ unsigned int OgmapProcessing::countUnknwonCells(){
 bool OgmapProcessing::isLocationFree(geometry_msgs::Point goal){
 
   bool free =false;
+  int row_req, col_req, row_rob, col_rob;
+  geometry_msgs::Pose pose_origin = map_.info.origin;
+  int index_req, index_rob;
+  row_rob = (int)(abs(goal.x - pose_origin.position.x))/map_.info.resolution;
+  col_rob = (int)(abs(goal.y - pose_origin.position.y))/map_.info.resolution;
+
+  if((col_rob>map_.info.width) && (row_rob>map_.info.height))
+    free = true;
+  else
+    free = false;
+
+  //free != checkcellInside;
   return free;
 
 }

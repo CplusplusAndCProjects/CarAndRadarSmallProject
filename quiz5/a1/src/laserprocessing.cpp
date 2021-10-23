@@ -88,7 +88,7 @@ geometry_msgs::Pose LaserProcessing::detectPoseHighIntensity(){
 
     geometry_msgs::Pose pose;
     geometry_msgs::Point point;
-    
+    geometry_msgs::Quaternion quaternion;
     std::vector<float> intensitie_arr = laserScan_.intensities;
     //std::vector<float> ranges_arr = laserScan_.ranges;
     for (int i = 0; i < intensitie_arr.size(); i++)
@@ -102,11 +102,14 @@ geometry_msgs::Pose LaserProcessing::detectPoseHighIntensity(){
             float range = laserScan_.ranges.at(i);
             point.x = static_cast<double>(range*cos(angle));
             point.y = static_cast<double>(range*sin(angle));
+            quaternion = tf::createQuaternionMsgFromYaw(abs(angle/(M_PI)));
             break;
         }
         
     }
     pose.position = point;
+    pose.orientation = quaternion;
+
     return pose;
 }
 
