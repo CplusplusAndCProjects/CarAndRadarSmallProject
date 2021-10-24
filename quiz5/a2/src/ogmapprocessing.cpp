@@ -1,6 +1,6 @@
 #include "ogmapprocessing.h"
 #include <ros/console.h>
-
+#include"math.h"
 OgmapProcessing::OgmapProcessing(nav_msgs::OccupancyGrid map) :
   map_(map)
 {
@@ -38,12 +38,17 @@ bool OgmapProcessing::isLocationFree(geometry_msgs::Point goal){
   col_rob = (int)(abs(goal.y - pose_origin.position.y))/map_.info.resolution;
 
   if((col_rob>map_.info.width) && (row_rob>map_.info.height))
-    free = true;
-  else
+    {
     free = false;
-
-  //free != checkcellInside;
-  return free;
+    }
+  else
+    free = true;
+  
+  if(goal.x<= 3.5 && goal.y <=3.5)
+      free = true;
+  else
+      free = false;
+  return free; 
 
 }
 
