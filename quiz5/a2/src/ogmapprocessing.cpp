@@ -41,13 +41,13 @@ bool OgmapProcessing::isLocationFree(geometry_msgs::Point goal){
       index_Free_arr.push_back(i);
   }
   
-  std::cout<<"index free is"<<std::endl;
-  for (int i = 0; i < index_Free_arr.size(); i++)
-  {
-    /* code */
-      std::cout<<"index_Free_arr["<<i<<"] = "<<index_Free_arr[i]<<std::endl;
+//  std::cout<<"index free is"<<std::endl;
+  // for (int i = 0; i < index_Free_arr.size(); i++)
+  // {
+  //   /* code */
+  //     std::cout<<"index_Free_arr["<<i<<"] = "<<index_Free_arr[i]<<std::endl;
 
-  }
+  // }
   
      // We compute the row and column as the distance from the origin divided by resolution
   int row = static_cast<int>((goal.x - pose_origin.position.x)/map_.info.resolution);

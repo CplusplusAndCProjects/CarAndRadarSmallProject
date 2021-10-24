@@ -39,7 +39,7 @@ unsigned int LaserProcessing::countSegments()
 
   for (int i = 0; i < intensitie_arr.size(); i++)
   {
-      std::cout<<"ranges["<<i<<"]= "<<ranges_arr.at(i)<<std::endl;
+      //std::cout<<"ranges["<<i<<"]= "<<ranges_arr.at(i)<<std::endl;
       /* code */
       if (intensitie_arr.at(i)>0.5 && ranges_arr.at(i)<0.3)
       {
