@@ -30,7 +30,7 @@ public:
     ~PfmsSample()
     {
     }
-
+cd `~.
 
     void mapCallback(const nav_msgs::OccupancyGridPtr& map)
     {
