@@ -5,7 +5,7 @@
 #include <nav_msgs/OccupancyGrid.h>
 #include <geometry_msgs/Point.h>
 #include<vector>
-
+#include "ros/ros.h"
 class OgmapProcessing
 {
 public:
@@ -33,13 +33,12 @@ public:
    *  @param[in]    map  - OccupancyGrid to be processed
    */
   void newMap(nav_msgs::OccupancyGrid map);
-
-
+  int midPointCircleDetectOccupied(int rmax);
+  bool testCell(int x, int y, int& index);
 
 
 private:
- nav_msgs::OccupancyGrid map_;
-
+  nav_msgs::OccupancyGrid map_;
 };
 
 #endif // OGMAPPROCESSING_H
