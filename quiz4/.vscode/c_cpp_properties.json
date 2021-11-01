@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/glacio/catkin_ws/devel/include/**",
+        "/home/glacio/Desktop/CarAndRadarSmallProject/project_setup/a3_pf_install/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/glacio/catkin_ws/src/pfms_support/local_map/include/**",
+        "/home/glacio/catkin_ws/src/pfms_support/map_ray_caster/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

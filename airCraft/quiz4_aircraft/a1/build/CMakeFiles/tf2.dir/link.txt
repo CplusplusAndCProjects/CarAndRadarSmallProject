@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtf2.a  CMakeFiles/tf2.dir/tf2.cpp.o
-/usr/bin/ranlib libtf2.a

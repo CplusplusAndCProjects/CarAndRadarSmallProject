@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../dep/include/tf.h
+types.h
+../dep/include/types.h
+
+../dep/include/tf2.h
+types.h
+../dep/include/types.h
+vector
+-
+cmath
+-
+
+../dep/include/types.h
+vector
+-
+cmath
+-
+
+/home/glacio/Desktop/CarAndRadarSmallProject/airCraft/a2_aircraft/a2_skeleton/source/tf2.cpp
+tf2.h
+/home/glacio/Desktop/CarAndRadarSmallProject/airCraft/a2_aircraft/a2_skeleton/source/tf2.h
+tf.h
+/home/glacio/Desktop/CarAndRadarSmallProject/airCraft/a2_aircraft/a2_skeleton/source/tf.h
+cmath
+-
+types.h
+-
+

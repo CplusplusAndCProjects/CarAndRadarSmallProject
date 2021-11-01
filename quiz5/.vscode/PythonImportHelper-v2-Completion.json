@@ -1,0 +1,448 @@
+[
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "print_function",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "errno",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "errno",
+        "description": "errno",
+        "detail": "errno",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "stat",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "stat",
+        "description": "stat",
+        "detail": "stat",
+        "documentation": {}
+    },
+    {
+        "label": "rollback_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.\n    by unrolling modifications based on all workspaces in CMAKE_PREFIX_PATH.\n    This does not cover modifications performed by environment hooks.\n    \"\"\"\n    lines = []\n    unmodified_environ = copy.copy(environ)\n    for key in sorted(env_var_subfolders.keys()):\n        subfolders = env_var_subfolders[key]",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def prepend_env_variables(environ, env_var_subfolders, workspaces):\n    \"\"\"Generate shell code to prepend environment variables for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('prepend folders of workspaces to environment variables'))\n    paths = [path for path in workspaces.split(os.pathsep) if path]\n    prefix = _prefix_env_variable(environ, 'CMAKE_PREFIX_PATH', paths, '')\n    lines.append(prepend(environ, 'CMAKE_PREFIX_PATH', prefix))\n    for key in sorted(key for key in env_var_subfolders.keys() if key != 'CMAKE_PREFIX_PATH'):\n        subfolder = env_var_subfolders[key]\n        prefix = _prefix_env_variable(environ, key, paths, subfolder)",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "assignment",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def assignment(key, value):\n    if not IS_WINDOWS:\n        return 'export %s=\"%s\"' % (key, value)\n    else:\n        return 'set %s=%s' % (key, value)\ndef comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "comment",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg\ndef prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)\n    else:\n        return 'set %s=%s%%%s%%' % (key, prefix, key)\ndef find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "find_env_hooks",
+        "kind": 2,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "def find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('found environment hooks in workspaces'))\n    generic_env_hooks = []\n    generic_env_hooks_workspace = []\n    specific_env_hooks = []\n    specific_env_hooks_workspace = []\n    generic_env_hooks_by_filename = {}\n    specific_env_hooks_by_filename = {}",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "CATKIN_MARKER_FILE",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "CATKIN_MARKER_FILE = '.catkin'\nsystem = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "system = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_DARWIN",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "IS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_WINDOWS",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "IS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "PATH_TO_ADD_SUFFIX",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "PATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "ENV_VAR_SUBFOLDERS",
+        "kind": 5,
+        "importPath": "a1.build.atomic_configure._setup_util",
+        "description": "a1.build.atomic_configure._setup_util",
+        "peekOfCode": "ENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,\n    'PKG_CONFIG_PATH': [os.path.join('lib', 'pkgconfig'), os.path.join('lib', 'x86_64-linux-gnu', 'pkgconfig')],\n    'PYTHONPATH': 'lib/python3/dist-packages',\n}\ndef rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.",
+        "detail": "a1.build.atomic_configure._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "rollback_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.\n    by unrolling modifications based on all workspaces in CMAKE_PREFIX_PATH.\n    This does not cover modifications performed by environment hooks.\n    \"\"\"\n    lines = []\n    unmodified_environ = copy.copy(environ)\n    for key in sorted(env_var_subfolders.keys()):\n        subfolders = env_var_subfolders[key]",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def prepend_env_variables(environ, env_var_subfolders, workspaces):\n    \"\"\"Generate shell code to prepend environment variables for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('prepend folders of workspaces to environment variables'))\n    paths = [path for path in workspaces.split(os.pathsep) if path]\n    prefix = _prefix_env_variable(environ, 'CMAKE_PREFIX_PATH', paths, '')\n    lines.append(prepend(environ, 'CMAKE_PREFIX_PATH', prefix))\n    for key in sorted(key for key in env_var_subfolders.keys() if key != 'CMAKE_PREFIX_PATH'):\n        subfolder = env_var_subfolders[key]\n        prefix = _prefix_env_variable(environ, key, paths, subfolder)",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "assignment",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def assignment(key, value):\n    if not IS_WINDOWS:\n        return 'export %s=\"%s\"' % (key, value)\n    else:\n        return 'set %s=%s' % (key, value)\ndef comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "comment",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg\ndef prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)\n    else:\n        return 'set %s=%s%%%s%%' % (key, prefix, key)\ndef find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "find_env_hooks",
+        "kind": 2,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "def find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('found environment hooks in workspaces'))\n    generic_env_hooks = []\n    generic_env_hooks_workspace = []\n    specific_env_hooks = []\n    specific_env_hooks_workspace = []\n    generic_env_hooks_by_filename = {}\n    specific_env_hooks_by_filename = {}",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "CATKIN_MARKER_FILE",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "CATKIN_MARKER_FILE = '.catkin'\nsystem = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "system = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_DARWIN",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "IS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_WINDOWS",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "IS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "PATH_TO_ADD_SUFFIX",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "PATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "ENV_VAR_SUBFOLDERS",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.installspace._setup_util",
+        "description": "a1.build.catkin_generated.installspace._setup_util",
+        "peekOfCode": "ENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,\n    'PKG_CONFIG_PATH': [os.path.join('lib', 'pkgconfig'), os.path.join('lib', 'x86_64-linux-gnu', 'pkgconfig')],\n    'PYTHONPATH': 'lib/python3/dist-packages',\n}\ndef rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.",
+        "detail": "a1.build.catkin_generated.installspace._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "code",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.generate_cached_setup",
+        "description": "a1.build.catkin_generated.generate_cached_setup",
+        "peekOfCode": "code = generate_environment_script('/home/glacio/Desktop/CarAndRadarSmallProject/quiz5/a1/build/devel/env.sh')\noutput_filename = '/home/glacio/Desktop/CarAndRadarSmallProject/quiz5/a1/build/catkin_generated/setup_cached.sh'\nwith open(output_filename, 'w') as f:\n    # print('Generate script for cached setup \"%s\"' % output_filename)\n    f.write('\\n'.join(code))\nmode = os.stat(output_filename).st_mode\nos.chmod(output_filename, mode | stat.S_IXUSR)",
+        "detail": "a1.build.catkin_generated.generate_cached_setup",
+        "documentation": {}
+    },
+    {
+        "label": "output_filename",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.generate_cached_setup",
+        "description": "a1.build.catkin_generated.generate_cached_setup",
+        "peekOfCode": "output_filename = '/home/glacio/Desktop/CarAndRadarSmallProject/quiz5/a1/build/catkin_generated/setup_cached.sh'\nwith open(output_filename, 'w') as f:\n    # print('Generate script for cached setup \"%s\"' % output_filename)\n    f.write('\\n'.join(code))\nmode = os.stat(output_filename).st_mode\nos.chmod(output_filename, mode | stat.S_IXUSR)",
+        "detail": "a1.build.catkin_generated.generate_cached_setup",
+        "documentation": {}
+    },
+    {
+        "label": "mode",
+        "kind": 5,
+        "importPath": "a1.build.catkin_generated.generate_cached_setup",
+        "description": "a1.build.catkin_generated.generate_cached_setup",
+        "peekOfCode": "mode = os.stat(output_filename).st_mode\nos.chmod(output_filename, mode | stat.S_IXUSR)",
+        "detail": "a1.build.catkin_generated.generate_cached_setup",
+        "documentation": {}
+    },
+    {
+        "label": "rollback_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.\n    by unrolling modifications based on all workspaces in CMAKE_PREFIX_PATH.\n    This does not cover modifications performed by environment hooks.\n    \"\"\"\n    lines = []\n    unmodified_environ = copy.copy(environ)\n    for key in sorted(env_var_subfolders.keys()):\n        subfolders = env_var_subfolders[key]",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend_env_variables",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def prepend_env_variables(environ, env_var_subfolders, workspaces):\n    \"\"\"Generate shell code to prepend environment variables for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('prepend folders of workspaces to environment variables'))\n    paths = [path for path in workspaces.split(os.pathsep) if path]\n    prefix = _prefix_env_variable(environ, 'CMAKE_PREFIX_PATH', paths, '')\n    lines.append(prepend(environ, 'CMAKE_PREFIX_PATH', prefix))\n    for key in sorted(key for key in env_var_subfolders.keys() if key != 'CMAKE_PREFIX_PATH'):\n        subfolder = env_var_subfolders[key]\n        prefix = _prefix_env_variable(environ, key, paths, subfolder)",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "assignment",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def assignment(key, value):\n    if not IS_WINDOWS:\n        return 'export %s=\"%s\"' % (key, value)\n    else:\n        return 'set %s=%s' % (key, value)\ndef comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "comment",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def comment(msg):\n    if not IS_WINDOWS:\n        return '# %s' % msg\n    else:\n        return 'REM %s' % msg\ndef prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "prepend",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def prepend(environ, key, prefix):\n    if key not in environ or not environ[key]:\n        return assignment(key, prefix)\n    if not IS_WINDOWS:\n        return 'export %s=\"%s$%s\"' % (key, prefix, key)\n    else:\n        return 'set %s=%s%%%s%%' % (key, prefix, key)\ndef find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "find_env_hooks",
+        "kind": 2,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "def find_env_hooks(environ, cmake_prefix_path):\n    \"\"\"Generate shell code with found environment hooks for the all workspaces.\"\"\"\n    lines = []\n    lines.append(comment('found environment hooks in workspaces'))\n    generic_env_hooks = []\n    generic_env_hooks_workspace = []\n    specific_env_hooks = []\n    specific_env_hooks_workspace = []\n    generic_env_hooks_by_filename = {}\n    specific_env_hooks_by_filename = {}",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "CATKIN_MARKER_FILE",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "CATKIN_MARKER_FILE = '.catkin'\nsystem = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "system = platform.system()\nIS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_DARWIN",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "IS_DARWIN = (system == 'Darwin')\nIS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "IS_WINDOWS",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "IS_WINDOWS = (system == 'Windows')\nPATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "PATH_TO_ADD_SUFFIX",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "PATH_TO_ADD_SUFFIX = ['bin']\nif IS_WINDOWS:\n    # while catkin recommends putting dll's into bin, 3rd party packages often put dll's into lib\n    # since Windows finds dll's via the PATH variable, prepend it with path to lib\n    PATH_TO_ADD_SUFFIX.extend([['lib', os.path.join('lib', 'x86_64-linux-gnu')]])\n# subfolder of workspace prepended to CMAKE_PREFIX_PATH\nENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    },
+    {
+        "label": "ENV_VAR_SUBFOLDERS",
+        "kind": 5,
+        "importPath": "a1.build.devel._setup_util",
+        "description": "a1.build.devel._setup_util",
+        "peekOfCode": "ENV_VAR_SUBFOLDERS = {\n    'CMAKE_PREFIX_PATH': '',\n    'LD_LIBRARY_PATH' if not IS_DARWIN else 'DYLD_LIBRARY_PATH': ['lib', os.path.join('lib', 'x86_64-linux-gnu')],\n    'PATH': PATH_TO_ADD_SUFFIX,\n    'PKG_CONFIG_PATH': [os.path.join('lib', 'pkgconfig'), os.path.join('lib', 'x86_64-linux-gnu', 'pkgconfig')],\n    'PYTHONPATH': 'lib/python3/dist-packages',\n}\ndef rollback_env_variables(environ, env_var_subfolders):\n    \"\"\"\n    Generate shell code to reset environment variables.",
+        "detail": "a1.build.devel._setup_util",
+        "documentation": {}
+    }
+]
