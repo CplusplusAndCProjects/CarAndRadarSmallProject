@@ -1,5 +1,27 @@
 Quiz 5
 ======
+install ros noteic (refer https://wiki.ros.org/Installation/Ubuntu)
+
+1. sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+2. sudo apt install curl # if you haven't already installed curl
+3. curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+4. sudo apt update
+5. sudo apt install ros-noetic-desktop-full
+
+setup catkin workspace
+6. source /opt/ros/noetic/setup.bash
+7. 
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+8. sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+9. sudo apt install python3-rosdep
+10. 
+sudo rosdep init
+rosdep update
+
+
+
 link source: 
 run: ln -s ~/Projects/CarAndRadarSmallProject/project_setup/pfms_support/
 
