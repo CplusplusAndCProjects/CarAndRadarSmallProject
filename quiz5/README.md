@@ -1,22 +1,14 @@
 Quiz 5
 ======
+link source: 
+run: ln -s ~/Projects/CarAndRadarSmallProject/project_setup/pfms_support/
 
-General Information
-------
-To develop the quiz  symbolically link the [quiz5 folder](.) to your catkin_ws/src (ie if your quiz5 folder path is <git_repo_path>/quizzes/quiz5/) execute:
 
-```bash
-cd ~/catkin_ws/src
-ln -s <git_repo_path>/quizzes/quiz5/
-```
-Compile with catkin_make, tests are compiled with `catkin_make tests` **NOTE plural in tests** 
+run: gedit ~/.bashrc
+add link to .bashrc file: 
+source /home/glacio/Projects/CarAndRadarSmallProject/Project/a3/a3_pf_install/setup.bash
 
-```bash
-cd ~/catkin_ws
-catkin_make
-catkin_make tests
-```
-
+test workspace run: roslaunch project_setup project_setup.launchgit add 
 In ROS to test our code we can supply a rosbag (a collection of data) that we have recorded and know "ground truth". To examine the rosbag that has been supplied for quiz5 a1 and a2 (we use same bag for both) close your project_setup (if you have it running) open a terminal and go to the bag folder using `roscd quiz5_a1/test/bag/`
 Play the bag using `rosbag play -r 0.1 --clock -l sample.bag`
 To view the data after playing use `rviz -d $(rospack find project_setup)/rviz/pfms.rviz`
