@@ -33,6 +33,8 @@ source /home/glacio/Projects/CarAndRadarSmallProject/Project/a3/a3_pf_install/se
 test workspace run: roslaunch project_setup project_setup.launch
 
 fix error running command "roslaunch project_setup project_setup.launch"
+https://stackoverflow.com/questions/38660116/ros-node-not-working-through-launch-file-execution
+
 ---> run command: source devel/setup.bash or delete and rebuild catkin workspace 
 In ROS to test our code we can supply a rosbag (a collection of data) that we have recorded and know "ground truth". To examine the rosbag that has been supplied for quiz5 a1 and a2 (we use same bag for both) close your project_setup (if you have it running) open a terminal and go to the bag folder using `roscd quiz5_a1/test/bag/`
 Play the bag using `rosbag play -r 0.1 --clock -l sample.bag`
