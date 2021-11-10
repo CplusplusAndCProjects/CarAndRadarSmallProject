@@ -30,13 +30,15 @@ run: gedit ~/.bashrc
 add link to .bashrc file: 
 source /home/glacio/Projects/CarAndRadarSmallProject/Project/a3/a3_pf_install/setup.bash
 
-test workspace run: roslaunch project_setup project_setup.launchgit add 
+test workspace run: roslaunch project_setup project_setup.launch
+
+fix error running command "roslaunch project_setup project_setup.launch"
+---> run command: source devel/setup.bash or delete and rebuild catkin workspace 
 In ROS to test our code we can supply a rosbag (a collection of data) that we have recorded and know "ground truth". To examine the rosbag that has been supplied for quiz5 a1 and a2 (we use same bag for both) close your project_setup (if you have it running) open a terminal and go to the bag folder using `roscd quiz5_a1/test/bag/`
 Play the bag using `rosbag play -r 0.1 --clock -l sample.bag`
 To view the data after playing use `rviz -d $(rospack find project_setup)/rviz/pfms.rviz`
 
  
-
 <img src="./pic/a1_example.png" style="zoom: 50%;" />
 
 
